@@ -5,7 +5,7 @@
 	
 	$page_title = 'Newman';
 	
-	// Getting info
+	// Getting info 
 	///Vars
 	$H = array(); ////HTML to print
 	$id = "";
@@ -18,10 +18,10 @@
 	// $db_credit_const = ["train2", "root", "1", "nm_const"];
 	$conn_const = DB->connect("nm_const", CONN_CREDITS);
 	
-	/// Retrive data
+	/// Retrive element from form
 	FORM->get("fId", $id);
 	FORM->get("fName", $name);
-	
+
 	///Extracting
 	//// General elements
 	///// Multiple methods
@@ -47,6 +47,11 @@
 	define("global_name", $elem_info["global_name"]);
 	
 	// print_r($elem_info);
+
+	/// Language
+	$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    $acceptLangs = ['fr' => 'Français', 'en' => 'English'];
+    $lang = in_array($lang, $acceptLangs) ? $lang : 'en';
 
 ?>
 <!DOCTYPE HTML>
@@ -107,10 +112,16 @@
 					
 					
 				</div>
-				<div id="setRight">
-						<button type="button">Lang V</button>
+				<form method='GET' id="setRight">
+						<select id="sel-lang" name="fLang">
+						<!-- Language selection -->
+						<?php foreach ($acceptLangs as $accLang => $accFull): ?>
+							<option value="<?=$accLang?>" id="sel-lang-<?=$accLang?>" <?php echo $accLang==$lang ? 'selected' : '' ?>><?=$accFull?></option>
+						<?php endforeach; ?>
+						</select>
+						<!-- Setting -->
 						<button type="button">Settings O</button>
-				</div>
+				</form>
 			</div>
 		</div>
 		
@@ -121,22 +132,16 @@
 		<!-- Main area of the game to play it, panels of constructions, stats, overviews -->
 		<div class="mainBody">
 			<?php 
-				// INCLUDE AREA. TESTS FOR UI
+				// INCLUDE AREA.
 				
 				if (type == "planet") {
+					/// Planet view selected
 					require "ctrlPanel_planet_1-0.php";
 				} else {
+					/// If lost in the universe
 					require "localizer.php";	
 				}
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
 			?>
 		</div>
 
