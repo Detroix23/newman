@@ -4,7 +4,9 @@
 	// Load objects
 	/// Page title, can change
 
-	
+	/// Translation
+	//// cf. uiTop
+
 	/// Loading Ressources
 	$all['r']['str'] = file_get_contents('./objects/ressources.json');
 	$all['r'] = json_decode(
@@ -88,6 +90,7 @@
         <hr>
         <div class="ctnr-content">
             <div class="content">
+				<!-- Window 1 - Builds -->
                 <table id="table-build" class="table-build1">
                     <tr>
                         <th>Name</th>
@@ -98,7 +101,7 @@
                     </tr>
                     <?php foreach ($bs as $bname => $bval): ?>
                     <tr>
-                        <td class="label-itemKey1"><?= $bname ?> : </td>
+                        <td class="label-itemKey1"><?= $all['b'][$bname]['name'][$lang]; ?> : </td>
                         <td class="label-itemPlus"><button class="btn-incr btn-plus1">+</button></td>
                         <td class="label-itemValue1"><?= $bval ?></td>
                         <td class="label-itemMinus"><button class="btn-incr btn-minus1">-</button></td>

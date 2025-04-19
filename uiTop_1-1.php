@@ -59,13 +59,21 @@
     $lang = array_key_exists($lang, $acceptLangs) ? $lang : 'en';
 	// echo $lang;
 
+	//// Translation text
+	$all['txt']['str'] = file_get_contents('./lang/lang.json');
+	$all['txt'] = json_decode(
+		$all['txt']['str'],
+		associative: true,
+		flags: JSON_THROW_ON_ERROR);
+
+
 ?>
 <!DOCTYPE HTML>
-<html>
+<html class="html-top">
 <head>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?= $page_title ?></title>
+	<title><?= $all['txt']['top']['title'][$lang] ?></title>
 	
 	<link rel="stylesheet" href="./css/general1.css">
 	<!-- cf Scripts at end of BODY -->
@@ -73,7 +81,7 @@
 	
 </head>
 
-<body>
+<body class="ctnr-body">
 
 	<!-- Approved grid based layout -->
 	
@@ -81,7 +89,7 @@
 		<!-- Left column, logo and quick access, shortcuts -->
 		<div class="quickAccess">
 			<img id="logoMain" src="./img/NM_Logo1AlphaFull_V0-1.svg" title="Newman" width="100%">
-			<h2 class="emp1 i"><span class="flw">Quick access</span></h2>
+			<h2 class="emp1 i"><span class="flw"><?= $all['txt']['top']['quickAccess'][$lang] ?></span></h2>
 			<img class="help1" src="./img/help1.png" height="25" width="25">
 		
 		</div>
@@ -126,7 +134,7 @@
 						<?php endforeach; ?>
 						</select>
 						<!-- Setting -->
-						<button type="button">Settings O</button>
+						<button type="button"><?= $all['txt']['top']['settingMain'][$lang] ?></button>
 				</form>
 			</div>
 		</div>
@@ -153,7 +161,7 @@
 
 		<div id="ctnr-turn" class="ctnr-btn-turn">
 			<button tabindex=1 id="btn-turn" class="btn-turn">
-				TURN >
+				<?= $all['txt']['top']['turnButton'][$lang] ?>
 			</button>
 		</div>
 	</div>
