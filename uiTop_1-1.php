@@ -147,9 +147,6 @@
 		</div>
 	</div>
 
-	
-	
-	</div>
 
 
 
@@ -163,5 +160,5 @@
 
 	
 	<script src="./js/ctrlPanel.js">CtrlPanels Script</script>
-<body>
-<html>
+</body>
+</html>

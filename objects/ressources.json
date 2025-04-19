@@ -3,15 +3,15 @@
 		"iron" : {
 			"id" : 1,
 			"name": {
-				"fr_Fr" : "Fer",
-				"en_En" : "Iron"
+				"fr" : "Fer",
+				"en" : "Iron"
 			}
 		},
 		"copper" : {
 			"id" : 2,
 			"name": {
-				"fr_Fr" : "Cuivre",
-				"en_En" : "Copper"
+				"fr" : "Cuivre",
+				"en" : "Copper"
 			}
 		}
 		
@@ -26,8 +26,8 @@
 		"armature" : {
 			"id" : 1,
 			"name": {
-				"fr_Fr" : "Armature",
-				"en_En" : "Armature"
+				"fr" : "Armature",
+				"en" : "Armature"
 			},
 			"materials" : [
 				["Iron"]

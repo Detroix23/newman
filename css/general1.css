@@ -323,3 +323,20 @@ button {
 } .pnl-sup-br {
 	grid-area: br;
 } 
+
+
+.table-build1 {
+	/* Build = Name (+) N (-) */
+	table-layout: fixed;
+	border-collapse: collapse;
+	width: 100%;
+	
+} .table-build1 .label-itemKey1 {
+	text-align: right;
+}.table-build1 .label-itemPlus {
+	text-align: right;
+}.table-build1 .label-itemValue1 {
+	text-align: center;
+}.table-build1 .label-itemMinus {
+	text-align: left;
+}

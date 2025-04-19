@@ -1,0 +1,55 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\wamp64\\www\\newman\\game\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\newman\\game\\ctrlPanel_planet_1-0.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ctrlPanel_planet_1-0.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\wamp64\\www\\newman\\game\\css\\general1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:css\\general1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ctrlPanel_planet_1-0.php",
+              "DocumentMoniker": "C:\\wamp64\\www\\newman\\game\\ctrlPanel_planet_1-0.php",
+              "RelativeDocumentMoniker": "ctrlPanel_planet_1-0.php",
+              "ToolTip": "C:\\wamp64\\www\\newman\\game\\ctrlPanel_planet_1-0.php",
+              "RelativeToolTip": "ctrlPanel_planet_1-0.php",
+              "Icon": "89320d42-7831-4f47-839a-c227d3a60919.000001|",
+              "WhenOpened": "2025-04-19T12:05:34.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "general1.css",
+              "DocumentMoniker": "C:\\wamp64\\www\\newman\\game\\css\\general1.css",
+              "RelativeDocumentMoniker": "css\\general1.css",
+              "ToolTip": "C:\\wamp64\\www\\newman\\game\\css\\general1.css",
+              "RelativeToolTip": "css\\general1.css",
+              "ViewState": "AgIAAC8BAAAAAAAAAAAAAFMBAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-19T12:06:47.351Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

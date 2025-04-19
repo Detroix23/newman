@@ -22,5 +22,5 @@
 ?>
 
 <h2>Lost in the universe?</h2>
-<h3>Find your way with this list</h2>
+<h3>Find your way with this NAVIGATOR list: </h2>
 <?= $list; ?>
