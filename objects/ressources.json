@@ -1,0 +1,43 @@
+{
+	"r1" : {
+		"iron" : {
+			"id" : 1,
+			"name": {
+				"fr_Fr" : "Fer",
+				"en_En" : "Iron"
+			}
+		},
+		"copper" : {
+			"id" : 2,
+			"name": {
+				"fr_Fr" : "Cuivre",
+				"en_En" : "Copper"
+			}
+		}
+		
+		
+		
+		
+		
+		
+	},
+	
+	"r2" : {
+		"armature" : {
+			"id" : 1,
+			"name": {
+				"fr_Fr" : "Armature",
+				"en_En" : "Armature"
+			},
+			"materials" : [
+				["Iron"]
+			]
+			
+		}
+	},
+	
+	"r3" : {
+		
+		
+	}	
+}

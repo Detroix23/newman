@@ -1,0 +1,44 @@
+{
+	"drillMk1": {
+		"id" : 1,
+		"name" : {
+			"fr_Fr": "Foreuse Mk1",
+			"en_En": "Drill Mk1"
+		},
+		"recipe" : [
+			[{"r": "iron", "cost": 5}]
+		]
+	},
+	"factoryMk1": {
+		"id" : 2,
+		"name" : {
+			"fr_Fr": "Usine Mk1",
+			"en_En": "Factory Mk1"
+		},
+		"recipe" : [
+			[{"r": "iron", "cost": 10}]
+		]
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
