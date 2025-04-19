@@ -49,9 +49,15 @@
 	// print_r($elem_info);
 
 	/// Language
-	$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-    $acceptLangs = ['fr' => 'Français', 'en' => 'English'];
-    $lang = in_array($lang, $acceptLangs) ? $lang : 'en';
+	//// First check POST, then browser
+	$lang = '';
+	FORM->post('fLang', $lang);
+	$acceptLangs = ['fr' => 'Français', 'en' => 'English'];
+	if ($lang === '') {
+		$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+	}
+    $lang = array_key_exists($lang, $acceptLangs) ? $lang : 'en';
+	// echo $lang;
 
 ?>
 <!DOCTYPE HTML>
@@ -69,7 +75,7 @@
 
 <body>
 
-	<!-- Experimenting with grid based layout -->
+	<!-- Approved grid based layout -->
 	
 	<div id="grid">
 		<!-- Left column, logo and quick access, shortcuts -->
@@ -112,9 +118,9 @@
 					
 					
 				</div>
-				<form method='GET' id="setRight">
-						<select id="sel-lang" name="fLang">
-						<!-- Language selection -->
+				<form method='post' id="setRight">
+						<select id="sel-lang" name="fLang" onchange="submit();">
+						<!-- Language selection, with auto submit -->
 						<?php foreach ($acceptLangs as $accLang => $accFull): ?>
 							<option value="<?=$accLang?>" id="sel-lang-<?=$accLang?>" <?php echo $accLang==$lang ? 'selected' : '' ?>><?=$accFull?></option>
 						<?php endforeach; ?>
