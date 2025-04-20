@@ -22,5 +22,14 @@
 ?>
 
 <h2>Lost in the universe?</h2>
+
+<h3>You arrived here because: </h3>
+<ul>
+<?php
+	if (!$valid_elem) echo '<li>Invalid element, where you think you are going ?</li>';
+	if (!$valid_sel) echo '<li>No selection, you silly bot.</li>';
+?>
+</ul>
+
 <h3>Find your way with this NAVIGATOR list: </h2>
 <?= $list; ?>

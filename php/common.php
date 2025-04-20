@@ -61,7 +61,8 @@
 				}
 			}
 			
-			return $success; }
+			return $success; 
+		}
 		
 		function post($fData, &$data, &$dataErr=NULL, $pattern="~.~", $errEmpty="Chain Required", $errFormat="Incorrect format") {
 			$success = False;
@@ -80,10 +81,38 @@
 				}
 			}
 			
-			return $success; }
+			return $success; 
+		}
 		
+		function reqc($fName, &$dataErr=NULL, $pattern="~.~", $errEmpty="Chain Required", $errFormat="Incorrect format") {
+			/**
+			 * Function: Retrive data from form via REQUEST.
+			 * Returns: Data if exists, False (bool) if not.
+			 */
+
+			$success = False;
+			$data = NULL;
+
+			if (!isset($_REQUEST["$fName"])) {
+				$dataErr = $errEmpty;
+				$data = False;
+
+			} else {	
+				/// Verif data
+				if (!preg_match($pattern, $this->clean($_REQUEST["$fName"]))) {
+					$dataErr = $errFormat;
+
+				} else {
+					$data = test_input($_REQUEST["$fName"]);
+					$success = True;
+				}
+			}
+			
+			return $data;
+		}
 	
 	}
+
 	
 	$FORM = new form;
 	define('FORM', $FORM);	
