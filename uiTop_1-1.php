@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 
 	include "./php/common.php";
 	
@@ -25,7 +25,7 @@
 	///Extracting
 	//// General elements
 	///// Multiple methods
-	$valid_sel = True; //// Is the player somewhere ?
+	$valid['sel'] = True; //// Is the player somewhere ?
 
 	$elem_info["id"] = $elem_info["default_name"] = $elem_info["type"] = $elem_info["local_name"] = $elem_info["global_name"] = "";
 	$elem_info_list = ['id', 'default_name', 'type', 'local_name', 'global_name'];
@@ -37,20 +37,23 @@
 		$SQL["sel_elem_info_name"] = "SELECT * FROM all_index WHERE default_name = '$name'";
 		$elem_info = DB->fetch($conn_elems, $SQL["sel_elem_info_name"], DB::ASSOC_ONE_RECORD);
 	} else {
-		$valid_sel = False;
+		$valid['sel'] = False;
 	}
 	///// Check validity
 	if ($elem_info) {
 		///// If selection is correct or pre-empty (on non-select)
-		$valid_elem = True;
+		$valid['elem'] = True;
 	} else {
 		//// If player selected an element taht doesnt exist in DB
-		$valid_elem = False;
+		$valid['elem']  = False;
 		$elem_info = [];
 	}
-	foreach ($elem_info_list as $info) {
+	
+	// var_dump($elem_info);
+
+	foreach (['id', 'default_name'] as $info) {
 		if (!isset($elem_info[$info])) {
-			$valid_elem = False;
+			$valid['elem'] = False;
 			$elem_info[$info] = '';
 		}
 	}
@@ -86,7 +89,6 @@
 		$all['txt']['str'],
 		associative: true,
 		flags: JSON_THROW_ON_ERROR);
-		
 		
 ?>
 <!DOCTYPE HTML>
@@ -165,9 +167,9 @@
 
 
 
-        <!-- Main area of the game to play it, panels of constructions, stats, overviews -->
-        <div class="mainBody">
-            <?php
+		<!-- Main area of the game to play it, panels of constructions, stats, overviews -->
+		<div class="mainBody">
+			<?php
 				// INCLUDE AREA.
 
 				if (type == "planet") {
@@ -180,8 +182,8 @@
 
 			?>
         </div>
-		
 
+		<?php if ($valid['elem'] AND $valid['sel']): ?>
         <div id="ctnr-turn" class="ctnr-btn-turn">
             <!-- Form to pass a turn, sending this page to the 'turn.php' -->
             <form method="POST" action="./turn.php">
@@ -195,7 +197,7 @@
                 </button>
             </form>
         </div>
-    
+		<?php endif; ?>
 	
 	</div>
 

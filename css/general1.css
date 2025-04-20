@@ -19,6 +19,10 @@
 	color: var(--c-main);
 }
 
+html {
+	background-color: var(--c-ctr);
+}
+
 body {
 	margin: 0px;
 

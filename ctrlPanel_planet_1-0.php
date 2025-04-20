@@ -54,7 +54,6 @@
 			//// Debug Test Database port
 			
 			//// Debug powers
-			$_SESSION[name]['r']['r1']['iron'] += 15;
 			
 			
 		}
@@ -187,6 +186,3 @@
     </div>
 
 </div>
-
-
-<?php session_write_close() ?>
