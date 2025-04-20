@@ -51,9 +51,9 @@
 	
 	// var_dump($elem_info);
 
-	foreach (['id', 'default_name'] as $info) {
+	foreach ($elem_info_list as $info) {
 		if (!isset($elem_info[$info])) {
-			$valid['elem'] = False;
+			if ($info == 'id' OR $info == 'default_name') $valid['elem'] = False;
 			$elem_info[$info] = '';
 		}
 	}
@@ -100,7 +100,9 @@
     <title><?= $all['txt']['top']['title'][$lang] ?></title>
 
     <link rel="stylesheet" href="./css/general1.css">
-    <!-- cf Scripts at end of BODY -->
+    <script src="./js/ctrlPanel.js" defer>
+    	CtrlPanels Script (folders, build controls,...)
+    </script>
 
 
 </head>
@@ -122,7 +124,7 @@
         <div class="navTop">
             <div class="flx-nav-1">
                 <div class="flex2">
-                    <h1><span class="flw"><?php
+                    <h1><span class="flw ttl1"><?php
 						/// Name of the elem
 						$H["h1-planet"] = "";
 						if ((empty(name)) OR (empty(id))) {
@@ -140,9 +142,9 @@
 					?></span></h1>
 
                     <h3 class="emp1 i">
-                        <a href="#" title="Galaxy">Galaxy</a> /
-                        <a href="#" title="Stellar object">Q1</a> /
-                        <a href="#" title="Solar sytem">Solar system</a>
+                        <a href="#" class="ttl1" title="Galaxy">Galaxy</a> /
+                        <a href="#" class="ttl1" title="Stellar object">Q1</a> /
+                        <a href="#" class="ttl1" title="Solar sytem">Solar system</a>
 
                     </h3>
 
@@ -192,7 +194,7 @@
 					$pageUri = $_SERVER['REQUEST_URI'];
 				?>
                 <input type="hidden" id="input-turn-hid-prevPage" name="fPrevPage" value="<?=$pageUri?>">
-                <button type="submit" tabindex="1" id="btn-turn" class="btn-turn">
+                <button type="submit" tabindex="1" id="btn-turn" class="btn-turn ttl1">
                     <?= $all['txt']['top']['turnButton'][$lang] ?>
                 </button>
             </form>
@@ -206,9 +208,7 @@
 
 
 
-    <script src="./js/ctrlPanel.js">
-    	CtrlPanels Script
-    </script>
+    
 </body>
 
 </html>

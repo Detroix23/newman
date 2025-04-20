@@ -83,7 +83,7 @@
                 <button class="btn-fold" id="folder-1">O</button>
             </div>
             <div class="ctnr-h-fold1">
-                <h2>Building</h2>
+                <h2 class="ttl1">Building</h2>
             </div>
         </div>
         <hr>
@@ -98,12 +98,15 @@
                         <th></th>
 
                     </tr>
-                    <?php foreach ($bs as $bname => $bval): ?>
+                    <?php $iid = 0;
+                        foreach ($bs as $bname => $bval):
+                            $iid++;
+                    ?>
                     <tr>
                         <td class="label-itemKey1"><?= $all['b'][$bname]['name'][$lang]; ?> : </td>
-                        <td class="label-itemPlus"><button class="btn-incr btn-plus1">+</button></td>
+                        <td id="bp<?=$iid?>" class="label-itemPlus"><button class="btn-incr btn-plus1">+</button></td>
                         <td class="label-itemValue1"><?= $bval ?></td>
-                        <td class="label-itemMinus"><button class="btn-incr btn-minus1">-</button></td>
+                        <td id="bm<?=$iid?>" class="label-itemMinus"><button class="btn-incr btn-minus1">-</button></td>
                     </tr>
                     <?php endforeach; ?>
                 </table>
@@ -119,7 +122,7 @@
                 <button class="btn-fold" id="folder-2">O</button>
             </div>
             <div class="ctnr-h-fold1">
-                <h2>Stockpile</h2>
+                <h2 class="ttl1" >Stockpile</h2>
             </div>
         </div>
         <hr>
@@ -145,7 +148,7 @@
                             <table class="table-build1">
                                 <?php foreach ($rn as $rname => $rval): ?>
                                 <tr>
-                                    <td class="label-itemKey1"><?= $rname ?> : </td>
+                                    <td class="label-itemKey1"><?= $all['r'][$rnk][$rname]['name'][$lang]; ?> : </td>
                                     <td class="label-itemValue1"><?= $rval ?></td>
                                     <td class="label-itemEvo"><?= "+0%" ?></td>
                                 </tr>
@@ -169,7 +172,7 @@
                 <button class="btn-fold" id="folder-3">O</button>
             </div>
             <div class="ctnr-h-fold1">
-                <h2>Info</h2>
+                <h2 class="ttl1">Info</h2>
             </div>
         </div>
         <hr>
