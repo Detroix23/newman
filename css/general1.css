@@ -1,0 +1,367 @@
+/* VARIABLES */
+:root {
+	--c-main: rgb(230, 242, 255);
+	--c-main-emp1: rgb(179, 215, 255);
+	--c-ctr: rgb(18, 18, 59);
+	--c-tr-gray-mid: rgba(125, 125, 125, 0.6);
+	--c-border-ctr1: rgb(153, 153, 255);
+	--c-grad-ctr1: rgb(10, 10, 16);
+	--c-grad-ctr2: rgb(61, 61, 92);
+	--c-grad-ctr3: rgb(92, 92, 138);
+}
+
+@font-face {
+	font-family: "Roboto";
+	src:
+		local("Roboto"),
+		url("../fonts/Roboto.ttf") format("truetype"),
+		url("../fonts/Roboto-Italic.ttf") format("truetype");
+} @font-face {
+	font-family: "Fredoka";
+	src:
+		url("../fonts/Fredoka.ttf") format("truetype");
+} @font-face {
+	font-family: "GothicExp";
+	src:
+		url("../fonts/GothicExp.ttf") format("truetype");
+} 
+
+/* GENERIC UI */
+
+* {
+	box-sizing: border-box;
+	color: var(--c-main);
+	font-family: "Roboto";
+	
+} 
+
+html {
+	background-color: var(--c-ctr);
+}
+
+body {
+	margin: 0px;
+
+}
+
+table {
+	width: 30%;
+	float: left
+}
+
+table, td{
+  border: 1px solid var(--c-border-ctr1);
+}
+
+button {
+	color: var(--c-ctr);
+}
+
+#grid {
+	display: inline-grid;
+	
+	gap: 5px 5px;
+	grid-template-columns: 200px auto 50px;
+	grid-template-rows: 50px auto 50px;
+	grid-template-areas:
+		'quick nav nav'
+		'quick game game'
+		'quick game game';
+	
+	width: 100%;
+	height: 100vh;
+	
+	background-color: lightgray;
+	background-image: url("../img/backTemp1.jpg");
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+@media only screen and (max-width: 800px) {
+	#grid {
+		grid-template-columns: auto auto;
+	}
+}
+
+@media only screen and (max-width: 720px) {
+	#grid {
+		grid-template-rows: 70px auto;
+	}
+}
+
+#grid > div {
+
+	line-height: 35px;
+	
+}
+
+.help1 {
+	vertical-align: baseline;
+}
+
+.flex2 h1 {
+	margin: 0 5px 0 0;
+}	
+
+.flw {
+	display: block;
+}
+
+.flw::first-letter {
+	font-size: 30px;
+	color: var(--c-main-emp1);
+}
+
+.i {
+	display: inline-flex;
+}
+
+.emp1 {
+	margin: 0px 5px 0px 0px;
+	
+	font-weight: normal;
+	font-style: italic;
+	
+}
+
+.ttl1 {
+	font-family: "GothicExp";
+}
+
+.quickAccess {
+	/* Start row / colum / End row / column */
+	/* grid-area: 1 / 1 / 3 / span 1; */
+	grid-area: quick;
+	
+	padding: 7.5px;
+	
+	background-color: var(--c-ctr);
+	background-image: linear-gradient(to right, var(--c-grad-ctr1), var(--c-ctr), var(--c-grad-ctr2), var(--c-grad-ctr3));
+	
+	border-right: 3px solid var(--c-border-ctr1);
+	
+	
+}
+
+.mainBody {
+	/*
+	grid-row-start: 2;
+	grid-row-end: 3;
+	grid-column-start: 2;
+	grid-column-end: 4;
+	*/
+	grid-area: game;
+	
+	background-color: transparent;
+	border: none;
+	
+	overflow: auto; 
+}
+
+.navTop {
+	/*
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 2;
+	grid-column-end: 4;
+	*/
+	grid-area: nav;
+	
+	padding: 7.5px;
+	
+	background-image: linear-gradient(to bottom, rgb(10, 10, 16), rgb(18, 18, 59), rgb(61, 61, 92), rgb(92, 92, 138));
+	
+	border-bottom: 3px solid rgb(153, 153, 255);
+}
+
+.navTop > h1 {
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	
+	/* margin: 7.5px 0px 7px 10px; */
+	/* margin: 0px 15px 0px 0px; */
+	
+	text-transform: uppercase;
+	font-size: 25px;
+}
+
+.navTop .flex2 {
+	display: flex;
+	flex-direction: row;
+	
+	height: 100%;
+	
+}
+
+#setRight {
+	display: inline-flex;
+	flex-direction: row;
+	/* position: fixed; */
+	
+	align-items: center;
+	justify-content: flex-end;
+	/* right: 5px; */
+	color: rgb(18, 18, 59);
+}
+
+.flx-nav-1 {
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	
+	width: 100%;
+}
+
+
+
+/** GAME */
+
+/*** Button */
+.ctnr-btn-turn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 8px;
+	
+	background: black;
+	border-radius: 15px 0 0 0;
+}
+.btn-turn {
+	height: 100%;
+	width: 100%;
+	
+	z-index: 1;
+	
+	border-radius: 7px;
+}
+
+
+/*** Game */
+
+.ctnr-planet {
+	/*
+	display: inline-grid;
+	grid-template-areas:
+		'tl tr'
+		'bl br';
+	gap: 10px 10px;
+	*/	
+	width: 100%;
+	height: 100%;
+}
+
+.pnl-folder {
+	--s-fold-head: 40px;
+	
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	flex-shrink: 0;
+	overflow: hidden;
+	resize: both;
+
+	background-color: var(--c-tr-gray-mid);
+	border: 3px solid var(--c-border-ctr1);
+	border-radius: 5px;
+	
+	width: 49.5%;
+	height: 49.5%;
+	
+	font-size: 0.7em;
+	line-height: 15px;
+	text-shadow: 1px 1px 5px black;
+}
+.pnl-folder > .head {
+	display: inline-flex;
+	flex-shrink: 0;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: var(--s-fold-head);
+
+}
+.pnl-folder > .head > .ctnr-h-fold1 {
+	display: inline;
+	flex-grow: 1;
+}
+
+.pnl-folder > .head  h2 {
+	display: inline;
+	margin: 0;
+}
+.pnl-folder > .head > .ctnr-btn-fold1 {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	margin: 0;
+	height: var(--s-fold-head);
+	width: var(--s-fold-head);
+} .ctnr-btn-fold1 > button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(var(--s-fold-head) / 2);
+	width: calc(var(--s-fold-head) / 2);
+	padding: 0;
+	
+}
+
+.pnl-folder > hr {
+	border: 1px solid var(--c-border-ctr1);
+	margin: 0;
+	flex-shrink: 0;
+	width: 100%;
+}
+
+
+.pnl-folder > .ctnr-content {
+	direction: rtl;
+	overflow: auto;
+	flex-grow: 1;
+	padding: 10px;
+	width: calc(100% - 20px);
+	
+}
+.pnl-folder > .ctnr-content > .content {
+	direction: ltr;
+	height: 100%;
+	width: 100%;
+}
+
+.pnl-sup-tl {
+	grid-area: tl;
+} .pnl-sup-tr {
+	grid-area: tr;
+} .pnl-sup-bl {
+	grid-area: bl;
+} .pnl-sup-br {
+	grid-area: br;
+} 
+
+
+.table-build1 {
+	/* Build = Name (+) N (-) */
+	table-layout: fixed;
+	border-collapse: collapse;
+	width: 100%;
+	
+} .table-build1 .label-itemKey1 {
+	text-align: right;
+}.table-build1 .label-itemPlus {
+	text-align: right;
+}.table-build1 .label-itemValue1 {
+	text-align: center;
+}.table-build1 .label-itemMinus {
+	text-align: left;
+}

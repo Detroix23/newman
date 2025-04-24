@@ -1,0 +1,43 @@
+/* Containers */
+.ctnr-stars {
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+}
+.ctnr-ssub {
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+}
+
+
+/* Fixed stars */
+.sf-star {
+    position: absolute;
+    opacity: 0;
+
+    animation-name: sf-blink;
+    /* Set in JS */
+    animation-duration: 4s;
+    animation-delay: 1s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+@keyframes sf-blink {
+    50% {opacity: 100%;}
+}
+
+/* Shooting stars */
+.ss-star {
+    position: absolute;
+
+}
+
+

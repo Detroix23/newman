@@ -1,0 +1,53 @@
+{
+	"r1" : {
+		"iron" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Fer",
+				"en" : "Iron"
+			}
+		},
+		"copper" : {
+			"id" : 2,
+			"name": {
+				"fr" : "Cuivre",
+				"en" : "Copper"
+			}
+		}
+		
+		
+		
+		
+		
+		
+	},
+	
+	"r2" : {
+		"armature" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Armature",
+				"en" : "Armature"
+			},
+			"materials" : [
+				["Iron"]
+			]
+			
+		}
+	},
+	
+	"r3" : {
+		"drill_head_mk1" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Tête de foreuse Mk1",
+				"en" : "Drill head Mk1"
+			},
+			"materials" : [
+				["Iron"]
+			]
+			
+		}
+		
+	}	
+}
