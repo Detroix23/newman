@@ -1,0 +1,25 @@
+
+/* Fixed stars */
+.sf-star {
+    position: absolute;
+    opacity: 0;
+
+    animation-name: sf-blink;
+    /* Set in JS */
+    animation-duration: 4s;
+    animation-delay: 1s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+.ctnr-stars {
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+@keyframes sf-blink {
+    50% {opacity: 100%;}
+}
