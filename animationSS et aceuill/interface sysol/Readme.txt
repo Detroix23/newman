@@ -1,0 +1,1 @@
+En gros pour la sélection des que la souri touche une Planet, elle est sélectionné et pour aller au lier faut appuyer sur "entré", pour changé le lien j'ai mi un commentaire dans le js
