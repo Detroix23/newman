@@ -27,7 +27,7 @@
 		},
 		"recipe" : [
 			[{"r" : "iron", "cost": 10}]
-			[{"r" : "Armature", "cost": 2}]
+			[{"r" : "armature", "cost": 2}]
 		]
 	}
 	
