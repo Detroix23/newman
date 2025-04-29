@@ -19,7 +19,16 @@
 			[{"r": "iron", "cost": 10}]
 		]
 	}
-	
+	"refineryMK1": {
+		"id" : 3,
+		"name" : {
+			"fr" : "raffinerie MK1",
+			"en" : "refinery MK1",
+		},
+		"recipe" : [
+			[{"r" : "iron", "cost": 10}]
+		]
+	}
 	
 	
 	
