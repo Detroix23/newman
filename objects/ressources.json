@@ -49,5 +49,19 @@
 			
 		}
 		
-	}	
+	},
+	"r4" : {
+	"plastic" : {
+		"id" : 1,
+		"name": {
+			"fr" : "plastic",
+			"en" : "plastic"
+		},
+		"materials" : [
+			["plastic"]
+		]
+		
+	}
+	
+	
 }
