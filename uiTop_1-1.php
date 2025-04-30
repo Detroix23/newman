@@ -22,9 +22,9 @@
     <title><?= $all['txt']['top']['title'][$lang] ?></title>
 
     <link rel="stylesheet" href="./css/general1.css">
-    <script src="./js/ctrlPanel.js" defer>
-    	CtrlPanels Script (folders, build controls,...)
-    </script>
+    <script src="./js/common.js"></script>
+    <script src="./js/ctrlPanel.js" defer></script>
+    
 
 
 </head>
@@ -64,9 +64,9 @@
 					?></span></h1>
 
                     <h3 class="emp1 i">
-                        <a href="#" class="ttl1" title="Galaxy">Galaxy</a> /
-                        <a href="#" class="ttl1" title="Stellar object">Q1</a> /
-                        <a href="#" class="ttl1" title="Solar sytem">Solar system</a>
+                        <a href="./uiTop_1-1.php?fName=G00001" class="ttl1" title="Galaxy">Galaxy</a> /
+                        <a href="./uiTop_1-1.php?fName=A00001" class="ttl1" title="Stellar object">Q1</a> /
+                        <a href="./uiTop_1-1.php?fName=S00001" class="ttl1" title="Solar sytem">Solar system</a>
 
                     </h3>
 
@@ -110,7 +110,7 @@
 		<?php if ($valid['elem'] AND $valid['sel']): ?>
         <div id="ctnr-turn" class="ctnr-btn-turn">
             <!-- Form to pass a turn, sending this page to the 'turn.php' -->
-            <form method="POST" action="./turn.php">
+            <form id="form-game" method="POST" action="./turn.php">
 				<?php
 					// $pageUrl = "http" . ((($_SERVER['HTTPS'] ?? "") == 'on') ? "s" : "") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 					$pageUri = $_SERVER['REQUEST_URI'];

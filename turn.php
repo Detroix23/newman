@@ -12,13 +12,24 @@
 
     // Loading
     $ERRS = [];
+    
     /// Gamedata
     $Gamedata = $_SESSION;
     $OLD_SESSION = $_SESSION;
+    
     /// Forms
     $prev = FORM->reqc('fPrevPage');
     $prev = !empty($prev) ? $prev : './uiTop_1-1.php';
     $db_export = empty(FORM->reqc('fDbExport')) ? False : True;
+    //// Treat all player actions (building,...); count additions (or substractions)
+    $Pvals = array();
+    $PvalBlackKeys = array('fPrevPage');
+    foreach ($_POST as $PostKey => $PostValue) {
+        if (!in_array($PostKey, $PvalBlackKeys)) {
+            $Pvals[$PostKey] = $PostValue; 
+        }
+    }
+
     /// Db
     $SQL = [];
     $conn_elem = new mysqli(CONN_CREDITS[0], CONN_CREDITS[1], CONN_CREDITS[2], 'nm_elems');
@@ -28,6 +39,9 @@
 
     foreach ($Gamedata as $elem => $info) {
         // Calc
+        /// Verif
+
+        /// Update
         
 
         // Export to DB
@@ -90,6 +104,18 @@
     <img src="./img/anim-load-rocket1.gif" alt="Loading animation" style="width:150px;height:150px;">
     <br><a href="<?=$prev?>">Back to game (<?=$prev?>)</a>
     
+    <h1>RECEIVED</h1>
+    <table class="table-build1">
+        <tr>
+            <th>Game inputs</th>
+            <th>Old Session</th>
+        </tr>
+        <tr>
+            <td><pre><?php print_r($Pvals);?></td>
+            <td><pre><?php print_r($OLD_SESSION); ?></pre></td>
+        </tr>
+    </table>
+
     <h1>RESULTS</h1>
     
     <h2>Elements loaded</h2>
@@ -102,12 +128,10 @@
     <table class="table-build1">
         <tr>
             <th>Logs</th>
-            <th>Old Session</th>
             <th>New Session</th>
         </tr>
         <tr>
             <td>No logs</td>
-            <td><pre><?php print_r($OLD_SESSION); ?></pre></td>
             <td>No updates</td>
         </tr>
     </table>
