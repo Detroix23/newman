@@ -41,7 +41,18 @@
 			[{"r" : "iron", "cost": 10}],
 			[{"r" : "armature", "cost": 2}]
 		]
+	},
+	"wellMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "puit MK1",
+			"en" : "well MK1",
+		},
+		"recipe" : [
+			[{"r" : "armature", "cost": 5}]               
+		]
 	}
+	.
 	
 	
 	
