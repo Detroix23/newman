@@ -61,7 +61,43 @@
 			["plastic"]
 		]
 		
-	}
+	},
+	"r5" : {
+	"cement" : {
+		"id" : 1,
+		"name": {
+			"fr" : "ciment",
+			"en" : "cement"
+		},
+		"materials" : [
+			["cement"]
+		]
+		
+	},
+	"r5" : {
+	"concrete" : {
+		"id" : 1,
+		"name": {
+			"fr" : "béton",
+			"en" : "concrete"
+		},
+		"materials" : [
+			["concrete"]
+		]
+		
+	},
+	"r6" : {
+	"sand" : {
+		"id" : 1,
+		"name": {
+			"fr" : "sable",
+			"en" : "sand"
+		},
+		"materials" : [
+			["sand"]
+		]
+		
+	},
 	
 	
 }
