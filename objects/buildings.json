@@ -38,7 +38,7 @@
 			"en" : "refinery MK1",
 		},
 		"recipe" : [
-			[{"r" : "iron", "cost": 10}]
+			[{"r" : "iron", "cost": 10}],
 			[{"r" : "armature", "cost": 2}]
 		]
 	}
