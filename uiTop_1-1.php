@@ -53,8 +53,10 @@
 							$H["h1-planet"] = "Planet not loaded";
 						} else if ((empty(global_name)) AND (empty(local_name))) {
 							$H["h1-planet"] = name;
-						} else if ((!empty(global_name)) XOR (!empty(local_name))) {
-							$H["h1-planet"] = ARR->take_exist([local_name, global_name], EMPTY_NOT_ZERO) . " [" . name . "]";
+						} else if ((!empty(global_name)) AND (empty(local_name))) {
+                            $H["h1-planet"] = global_name." [" . name . "]";
+                        } else if ((empty(global_name)) AND (!empty(local_name))) {
+                            $H["h1-planet"] = " (".local_name.")"." [" . name . "]";
 						} else {
 							$H["h1-planet"] = global_name. " (". local_name . ")" . " [" . name . "]";
 						}

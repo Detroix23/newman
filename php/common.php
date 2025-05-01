@@ -549,7 +549,7 @@
 	define("CRY", $CRYPT);
 	
 	
-	class arrays {
+	class arr {
 		/**
 		* Created: 03/04/2025
 		* Class: All related to arrays calcul, manipulation
@@ -644,7 +644,7 @@
 		
 	}
 	
-	$ARR = new arrays;
+	$ARR = new arr;
 	define("ARR", $ARR);
 	
 	
