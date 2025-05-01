@@ -1,0 +1,16 @@
+{
+    "_" : "Exemple of how will be formated BUIlDINGS and their PRODUCTION into the DB",
+
+    "name1" : {
+        "foo" : 5,
+        "bar" : 12
+    },
+
+    "name2" : {
+        "far" : 1,
+        "boo" : 12,
+        "Null" : 5
+    }
+
+
+}

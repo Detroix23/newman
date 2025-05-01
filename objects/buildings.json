@@ -6,7 +6,7 @@
 			"en": "Drill Mk1"
 		},
 		"recipe" : [
-			[{"r": "iron", "cost": 5}]
+			[{"iron_ingot": 5}]
 		]
 	},
 	"factoryMk1": {
@@ -16,7 +16,7 @@
 			"en": "Factory Mk1"
 		},
 		"recipe" : [
-			[{"r": "iron", "cost": 10}]
+			[{"iron_ingot" : 10}]
 		]
 	},
 

@@ -1,94 +1,16 @@
 <?php
 	if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+	/// Paths
+	define('__ROOT__', dirname(dirname(__FILE__)));
 
+	/// Main common functions
 	include "./php/common.php";
-	
-	$page_title = 'Newman';
-	
-	// Getting info 
-	///Vars
-	$H = array(); ////HTML to print
-	$id = "";
-	$name = "";
-	$SQL = array();
-	$SQL_RES = array(); //NU
-	////Connection to DB
-	// $db_credit_elems = ["train2", "root", "1", ];
-	$conn_elems = DB->connect("nm_elems", CONN_CREDITS);
-	// $db_credit_const = ["train2", "root", "1", "nm_const"];
-	$conn_const = DB->connect("nm_const", CONN_CREDITS);
-	
-	/// Retrive element from form
-	FORM->get("fId", $id);
-	FORM->get("fName", $name);
+	/// All data
+	require_once "./loaderTop.php";
+?>
 
-	///Extracting
-	//// General elements
-	///// Multiple methods
-	$valid['sel'] = True; //// Is the player somewhere ?
-
-	$elem_info["id"] = $elem_info["default_name"] = $elem_info["type"] = $elem_info["local_name"] = $elem_info["global_name"] = "";
-	$elem_info_list = ['id', 'default_name', 'type', 'local_name', 'global_name'];
+<?php
 	
-	if ($id) {
-		$SQL["sel_elem_info_id"] = "SELECT * FROM all_index WHERE id = $id";
-		$elem_info = DB->fetch($conn_elems, $SQL["sel_elem_info_id"], DB::ASSOC_ONE_RECORD);
-	} else if ($name) {
-		$SQL["sel_elem_info_name"] = "SELECT * FROM all_index WHERE default_name = '$name'";
-		$elem_info = DB->fetch($conn_elems, $SQL["sel_elem_info_name"], DB::ASSOC_ONE_RECORD);
-	} else {
-		$valid['sel'] = False;
-	}
-	///// Check validity
-	if ($elem_info) {
-		///// If selection is correct or pre-empty (on non-select)
-		$valid['elem'] = True;
-	} else {
-		//// If player selected an element taht doesnt exist in DB
-		$valid['elem']  = False;
-		$elem_info = [];
-	}
-	
-	// var_dump($elem_info);
-
-	foreach ($elem_info_list as $info) {
-		if (!isset($elem_info[$info])) {
-			if ($info == 'id' OR $info == 'default_name') $valid['elem'] = False;
-			$elem_info[$info] = '';
-		}
-	}
-
-	//// Precise info on element
-
-	
-	
-	//// ATE, All info defined (if there is info)
-	// echo "- Debug - Const defining";
-	define("id"			, $elem_info["id"]);
-	define("name" 		, $elem_info["default_name"]);
-	define("type"		, $elem_info["type"]);
-	define("local_name" , $elem_info["local_name"]);
-	define("global_name", $elem_info["global_name"]);
-	
-	// print_r($elem_info);
-
-	/// Language
-	//// First check POST, then browser
-	$lang = '';
-	FORM->post('fLang', $lang);
-	$acceptLangs = ['fr' => 'Français', 'en' => 'English'];
-	if ($lang === '') {
-		$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-	}
-    $lang = array_key_exists($lang, $acceptLangs) ? $lang : 'en';
-	// echo $lang;
-
-	//// Translation text
-	$all['txt']['str'] = file_get_contents('./lang/lang.json');
-	$all['txt'] = json_decode(
-		$all['txt']['str'],
-		associative: true,
-		flags: JSON_THROW_ON_ERROR);
 		
 ?>
 <!DOCTYPE HTML>
@@ -100,9 +22,9 @@
     <title><?= $all['txt']['top']['title'][$lang] ?></title>
 
     <link rel="stylesheet" href="./css/general1.css">
-    <script src="./js/ctrlPanel.js" defer>
-    	CtrlPanels Script (folders, build controls,...)
-    </script>
+    <script src="./js/common.js"></script>
+    <script src="./js/ctrlPanel.js" defer></script>
+    
 
 
 </head>
@@ -142,9 +64,9 @@
 					?></span></h1>
 
                     <h3 class="emp1 i">
-                        <a href="#" class="ttl1" title="Galaxy">Galaxy</a> /
-                        <a href="#" class="ttl1" title="Stellar object">Q1</a> /
-                        <a href="#" class="ttl1" title="Solar sytem">Solar system</a>
+                        <a href="./uiTop_1-1.php?fName=G00001" class="ttl1" title="Galaxy">Galaxy</a> /
+                        <a href="./uiTop_1-1.php?fName=A00001" class="ttl1" title="Stellar object">Q1</a> /
+                        <a href="./uiTop_1-1.php?fName=S00001" class="ttl1" title="Solar sytem">Solar system</a>
 
                     </h3>
 
@@ -188,7 +110,7 @@
 		<?php if ($valid['elem'] AND $valid['sel']): ?>
         <div id="ctnr-turn" class="ctnr-btn-turn">
             <!-- Form to pass a turn, sending this page to the 'turn.php' -->
-            <form method="POST" action="./turn.php">
+            <form id="form-game" method="POST" action="./turn.php">
 				<?php
 					// $pageUrl = "http" . ((($_SERVER['HTTPS'] ?? "") == 'on') ? "s" : "") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 					$pageUri = $_SERVER['REQUEST_URI'];

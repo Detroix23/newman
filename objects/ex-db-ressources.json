@@ -1,0 +1,24 @@
+{
+    "_" : "Exemple of how will be formated RESSOURCES and their SOURCE into the DB",
+
+    "r1" : {
+        "bar" : 0,
+        "foo" : 5
+    },
+
+    "r2" : {
+        "lorem" : {
+            "loremus" : 5,
+            "loremium" : 21
+        },
+        "ipsum" : {
+            "pismum" : 1,
+            "sumip" : 5
+        }
+    },
+
+    "r3" : {
+        "dummy" : 51
+    }
+
+}

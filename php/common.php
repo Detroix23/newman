@@ -341,6 +341,9 @@
 			return $nice;
 		}
 		
+		function query($conn, $sql_request) {
+			
+		}
 		
 	}
 	
@@ -693,5 +696,5 @@
 
 
 
-	
+	echo "<!-- DYNAMICS - Loaded: Common -->";
 ?>

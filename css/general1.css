@@ -8,6 +8,9 @@
 	--c-grad-ctr1: rgb(10, 10, 16);
 	--c-grad-ctr2: rgb(61, 61, 92);
 	--c-grad-ctr3: rgb(92, 92, 138);
+
+	--c-nega1: rgb(143, 0, 31);
+	--c-pos1: rgb(0, 219, 172);
 }
 
 @font-face {
@@ -89,6 +92,15 @@ button {
 		grid-template-rows: 70px auto;
 	}
 }
+
+/* DATA */
+.data {
+	display: none;
+}
+
+
+
+/* GENERAL */
 
 #grid > div {
 
@@ -274,9 +286,11 @@ button {
 	border: 3px solid var(--c-border-ctr1);
 	border-radius: 5px;
 	
+	min-height: 40px;
+	min-width: 340px;
 	width: 49.5%;
 	height: 49.5%;
-	
+
 	font-size: 0.7em;
 	line-height: 15px;
 	text-shadow: 1px 1px 5px black;
@@ -364,4 +378,13 @@ button {
 	text-align: center;
 }.table-build1 .label-itemMinus {
 	text-align: left;
+}
+
+.inp-numb1 {
+	font: 0.9rem "Fredoka";
+	color: var(--c-ctr);
+}
+
+.inp-numb1[value="-1"] {
+	color: var(--c-nega1);
 }

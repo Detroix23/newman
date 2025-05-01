@@ -1,20 +1,5 @@
 // Generate fixed blinking stars and shooting stars
 
-function randec(min, max, dec=0) {
-    min = Math.ceil(min * (10 ** dec));
-    max = Math.floor(max * (10 ** dec));
-    return Math.floor(Math.random() * (max-min) + min) / (10 ** dec);
-}
-
-function randint(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max-min) + min);
-}
-
-function roundr(n, dec) {
-    return Math.round(n * (10 ** dec)) / (10 ** dec);
-}
 
 /// Fixed blinking stars (cf. "sf")
 function sf_gen(e, numb, size=10) {
