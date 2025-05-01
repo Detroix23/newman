@@ -23,8 +23,8 @@
 	"pumpjackMK1": {
 		"id" : 3,
 		"name" : {
-			"fr" : "chevalet de pompage MK1",
-			"en" : "pumpjack MK1",
+			"fr" : "Chevalet de pompage MK1",
+			"en" : "pumpjack MK1"
 		},
 		"recipe" : [
 			[{"r" : "iron", "cost": 5}]
@@ -35,7 +35,7 @@
 		"id" : 4,
 		"name" : {
 			"fr" : "raffinerie MK1",
-			"en" : "refinery MK1",
+			"en" : "refinery MK1"
 		},
 		"recipe" : [
 			[{"r" : "iron", "cost": 10}],
@@ -46,28 +46,11 @@
 		"id" : 4,
 		"name" : {
 			"fr" : "puit MK1",
-			"en" : "well MK1",
+			"en" : "well MK1"
 		},
 		"recipe" : [
 			[{"r" : "armature", "cost": 5}]               
 		]
-	},
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}
+
 }

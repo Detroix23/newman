@@ -15,13 +15,17 @@
 				"en" : "Copper"
 			},
 			"recipe" : []
-		}
-		
-		
-		
-		
-		
-		
+		},
+		"sand" : {
+			"id" : 1,
+			"name": {
+				"fr" : "sable",
+				"en" : "sand"
+			},
+			"materials" : [
+				["sand"]
+			]
+		}	
 	},
 	
 	"r2" : {
@@ -35,6 +39,36 @@
 				["iron_ingot"]
 			]
 			
+		}, 
+		"plastic" : {
+			"id" : 1,
+			"name": {
+				"fr" : "plastic",
+				"en" : "plastic"
+			},
+			"materials" : [
+				["plastic"]
+			]
+		},
+		"cement" : {
+			"id" : 1,
+			"name": {
+				"fr" : "ciment",
+				"en" : "cement"
+			},
+			"materials" : [
+				["cement"]
+			]
+		},
+		"concrete" : {
+			"id" : 1,
+			"name": {
+				"fr" : "béton",
+				"en" : "concrete"
+			},
+			"materials" : [
+				["concrete"]
+			]
 		}
 	},
 	
@@ -51,55 +85,5 @@
 			
 		}
 		
-	},
-	"r4" : {
-	"plastic" : {
-		"id" : 1,
-		"name": {
-			"fr" : "plastic",
-			"en" : "plastic"
-		},
-		"materials" : [
-			["plastic"]
-		]
-		
-	},
-	"r5" : {
-	"cement" : {
-		"id" : 1,
-		"name": {
-			"fr" : "ciment",
-			"en" : "cement"
-		},
-		"materials" : [
-			["cement"]
-		]
-		
-	},
-	"r5" : {
-	"concrete" : {
-		"id" : 1,
-		"name": {
-			"fr" : "béton",
-			"en" : "concrete"
-		},
-		"materials" : [
-			["concrete"]
-		]
-		
-	},
-	"r6" : {
-	"sand" : {
-		"id" : 1,
-		"name": {
-			"fr" : "sable",
-			"en" : "sand"
-		},
-		"materials" : [
-			["sand"]
-		]
-		
-	},
-	
-	
+	}
 }
