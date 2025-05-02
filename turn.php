@@ -85,7 +85,7 @@
     <title>Next turn...</title>
 
     <link rel="stylesheet" href="./css/general1.css">
-
+    <script src="./js/common.js"></script>
 </head>
 
 <body class="ctnr-body">
@@ -111,7 +111,8 @@
             <th>Old Session</th>
         </tr>
         <tr>
-            <td><pre><?php print_r($Pvals);?></td>
+            <!-- Js local storage - All turn's player inputs -->
+            <td><pre><data id="jsLocalStorage" class="data-main" ><script type="text/javascript">data_local_storage("jsLocalStorage")</script></td>
             <td><pre><?php print_r($OLD_SESSION); ?></pre></td>
         </tr>
     </table>

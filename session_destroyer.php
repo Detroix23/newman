@@ -28,7 +28,7 @@
     <title>Next turn...</title>
 
     <link rel="stylesheet" href="./css/general1.css">
-
+	<script src="./js/common.js"></script>
 </head>
 
 <body class="ctnr-body">
@@ -75,7 +75,7 @@
 		</tr>
 		<tr>
 			<td></td>
-			<td><ul id="jsLocalStorage" class="data-main" style="display: block"></ul></td>
+			<td><data id="jsLocalStorage" class="data-main" style="display: block"></data></td>
 		</tr>
 	</table>
 
@@ -86,34 +86,7 @@
 		/**
 		 * Storing in DOM player's actions
 		 */
-		const ls_key_black = ['_'];
-		const jsLocalStorage = document.querySelector("#jsLocalStorage");
-		let jsLocalStorageTxt = "";
-		if (localStorage.length !== 0) {
-			const len_ls = localStorage.length;
-			for (i = 0; i < len_ls; i++) {
-				const ls_key = localStorage.key(i);
-				const ls_val = localStorage.getItem(ls_key)
-				if (!ls_key_black.includes(ls_key)) {
-					//jsLocalStorageTxt += ls_key + "=[" + ls_val + "]<br>\n";
-					//jsLocalStorage.innerHTML = jsLocalStorageTxt;
-					//// DOM
-					const ls_line = document.createElement('info');
-					ls_line.id = "data-ls-" + ls_key;
-					ls_line.key = ls_key;
-					ls_line.value = ls_val;
-					ls_line.innerHTML = ls_val;
-					jsLocalStorage.appendChild(ls_line);
-					
-					const testLs = document.querySelector("#" + ls_line.id);
-					alert("LS_line: " + testLs.id + ", value=" + testLs.value + ", key=" + testLs.key);
-				}
-			}
-		} else {
-			jsLocalStorageTxt = "Empty local storage!";
-			localStorage.setItem("_", "Local Js storage: mainly saving player's inputs");
-			jsLocalStorage.innerHTML = jsLocalStorageTxt;
-		}
+		data_local_storage("jsLocalStorage");
 		
 		console.log(localStorage);
 

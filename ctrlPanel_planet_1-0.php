@@ -7,18 +7,7 @@
 	/// Translation
 	//// cf. uiTop
 
-	/// Loading Ressources
-	$all['r']['str'] = file_get_contents('./objects/ressources.json');
-	$all['r'] = json_decode(
-		$all['r']['str'],
-		associative: true,
-		flags: JSON_THROW_ON_ERROR);
-	/// Loading Buildings
-	$all['b']['str'] = file_get_contents('./objects/buildings.json');
-	$all['b'] = json_decode(
-		$all['b']['str'],
-		associative: true,
-		flags: JSON_THROW_ON_ERROR);
+	/// Loading Object. cf. Loader top
 	
 	/*
 	echo "<pre>";

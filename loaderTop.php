@@ -2,7 +2,8 @@
     ///
 	//// Session loaded on main file
     //// common.php loaded on main file
-	
+	include_once "./php/common.php";
+
 	$page_title = 'Newman';
 	
 	// Getting info 
@@ -15,8 +16,10 @@
 	////Connection to DB
 	// $db_credit_elems = ["train2", "root", "1", ];
 	$conn_elems = DB->connect("nm_elems", CONN_CREDITS);
+	$_SESSION['conn']['elems'] = $conn_elems;
 	// $db_credit_const = ["train2", "root", "1", "nm_const"];
 	$conn_const = DB->connect("nm_const", CONN_CREDITS);
+	$_SESSION['conn']['const'] = $conn_const;
 	
 	/// Retrive element from form
 	FORM->get("fId", $id);
@@ -82,6 +85,19 @@
 	}
     $lang = array_key_exists($lang, $acceptLangs) ? $lang : 'en';
 	// echo $lang;
+
+	/// Loading Ressources
+	$all['r']['str'] = file_get_contents('./objects/ressources.json');
+	$all['r'] = json_decode(
+		$all['r']['str'],
+		associative: true,
+		flags: JSON_THROW_ON_ERROR);
+	/// Loading Buildings
+	$all['b']['str'] = file_get_contents('./objects/buildings.json');
+	$all['b'] = json_decode(
+		$all['b']['str'],
+		associative: true,
+		flags: JSON_THROW_ON_ERROR);
 
 	//// Translation text
 	$all['txt']['str'] = file_get_contents('./lang/lang.json');
