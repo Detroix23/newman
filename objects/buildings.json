@@ -51,7 +51,7 @@
 		"recipe" : [
 			[{"r" : "armature", "cost": 5}]               
 		]
-	}
+	},
 	"photovoltaic_panelsMK1": {
 		"id" : 4,
 		"name" : {
@@ -60,7 +60,7 @@
 		},
 		"recipe" : [
 			[{"r" : "glass", "cost": 2}],
-			[{"r" : "armature", "cost": 1}]
+			[{"r" : "armature", "cost": 1}],
 			[{"r" : "copper_ingot", "cost": 2}]
 		]
 	},
@@ -74,7 +74,7 @@
 		"recipe" : [
 			[{"r" : "gold", "cost": 2}],
 			[{"r" : "plastic", "cost": 1}],
-			[{"r" : "copper_ingot", "cost": 2}],
+			[{"r" : "copper_ingot", "cost": 2}]
 		]
 	},
 
@@ -87,7 +87,7 @@
 		"recipe" : [
 			[{"r" : "lithium", "cost": 2}],
 			[{"r" : "plastic", "cost": 3}],
-			[{"r" : "copper_ingot", "cost": 1}],
+			[{"r" : "copper_ingot", "cost": 1}]
 		]
-	},
+	}
 }
