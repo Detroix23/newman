@@ -52,5 +52,17 @@
 			[{"r" : "armature", "cost": 5}]               
 		]
 	}
+	"photovoltaic_panelsMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "panneaux photovoltaïque",
+			"en" : "photovoltaic panels"
+		},
+		"recipe" : [
+			[{"r" : "glass", "cost": 2}],
+			[{"r" : "armature", "cost": 1}]
+			[{"r" : "copper_ingot", "cost": 2}]
+		]
+	},
 
 }
