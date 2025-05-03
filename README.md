@@ -1,6 +1,8 @@
 
 # NEWMAN GAME
 
+---
+
 ## Requierments
 PHP version 8.3.14;
 MySQL version 9.1.0;
