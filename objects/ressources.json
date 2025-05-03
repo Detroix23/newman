@@ -178,4 +178,30 @@
 		
 		}
 	},
+	
+	"raw_litium" : {
+		"id" : 5,
+		"name": {
+			"fr" : "lithium brut",
+			"en" : "Raw_lithium"
+		},
+		"generation": {
+			"height": 0,
+			"width": 0,
+			"rarity": 0,
+		} 
+		
+	},
+
+	"litium" : {
+		"id" : 5,
+		"name": {
+			"fr" : "lithium",
+			"en" : "lithium"
+		},
+		"recipe" : [
+			["raw_lithium"]
+		] 
+		
+	},
 }
