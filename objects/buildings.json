@@ -65,4 +65,16 @@
 		]
 	},
 
+	"electronic_componentMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "composanst éléctronique MK1",
+			"en" : "electronic component"
+		},
+		"recipe" : [
+			[{"r" : "gold", "cost": 2}],
+			[{"r" : "plastic", "cost": 1}],
+			[{"r" : "copper_ingot", "cost": 2}],
+		]
+	},
 }
