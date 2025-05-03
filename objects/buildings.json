@@ -77,4 +77,17 @@
 			[{"r" : "copper_ingot", "cost": 2}],
 		]
 	},
+
+	"batteryMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "batterie MK1",
+			"en" : "battery MK1"
+		},
+		"recipe" : [
+			[{"r" : "lithium", "cost": 2}],
+			[{"r" : "plastic", "cost": 3}],
+			[{"r" : "copper_ingot", "cost": 1}],
+		]
+	},
 }
