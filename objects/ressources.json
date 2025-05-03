@@ -178,18 +178,4 @@
 		
 		}
 	},
-
-	"r3" : {
-	"electronic_chip" : {
-		"id" : 1,
-		"name": {
-			"fr" : "puce éléctronique",
-			"en" : "electronic chip"
-			},
-			"recipe" : [
-				["gold_ingot"]
-			]
-			
-		}
-	},
 }
