@@ -1,12 +1,11 @@
 
 # NEWMAN GAME
 
----
-
-## Requierments
-PHP version 8.3.14;
-MySQL version 9.1.0;
-Setup of DB (init via requierments.php)
+## Requirements
+Init via requierments.php
+- PHP version 8.3.14;
+- MySQL version 9.1.0;
+- Setup of DB.
 
 ## License
 CC-BY-1.0 - Open source project !
