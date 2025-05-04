@@ -10,7 +10,7 @@
 	/// Individual links
 	$allLinks = array();
 	foreach ($allElems as $elem) {
-		$allLinks[] = '<a href="./uiTop_1-1.php?fName='.$elem.'">'.$elem.'</a>';	
+		$allLinks[] = '<a href="./uiTop.php?fName='.$elem.'">'.$elem.'</a>';	
 	}
 	/// Legend
 	$legend = 'Elements';

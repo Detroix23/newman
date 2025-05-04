@@ -13,11 +13,10 @@
 	
 	/// Env consts
 
-	const CONN_CREDITS = ["train2", "root", "1"]; 
+	const CONN_CREDITS = ["newman", "root", "1"]; 
 	const DB_PREF = "";
 
 
 
 
 ?>
-	

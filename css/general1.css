@@ -156,6 +156,13 @@ button {
 	
 }
 
+.lim-h-vh {
+	max-height: 100vh;
+	overflow: auto;
+}
+
+/* GENERAL NODES */
+
 .mainBody {
 	/*
 	grid-row-start: 2;

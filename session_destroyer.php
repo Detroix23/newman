@@ -80,7 +80,7 @@
 	</table>
 
 	<br>
-	<a href="./uiTop_1-1.php">Go back to game</a><br>
+	<a href="./uiTop.php">Go back to game</a><br>
 	
 	<script type="text/javascript">
 		/**

@@ -21,7 +21,7 @@
 		public $revolutionSpeed;
 		public $ressources;
 		public $type;
-
+		public $subtype;
 		const probaGazeous = 0;
 
 		function __construct() {
@@ -31,7 +31,7 @@
 			$this->radius = rand(2000000, 28000000);
 			$this->distanceSun = 0;
 			$this->revolutionSpeed = 0;
-			if (rand(1, 100) <= probaGazeous) {
+			if (rand(1, 100) <= $this::probaGazeous) {
 				$this->subtype = "gaz";
 			} else {
 				$this->subtype = "solid";

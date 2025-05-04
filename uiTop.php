@@ -66,9 +66,9 @@
 					?></span></h1>
 
                     <h3 class="emp1 i">
-                        <a href="./uiTop_1-1.php?fName=G00001" class="ttl1" title="Galaxy">Galaxy</a> /
-                        <a href="./uiTop_1-1.php?fName=A00001" class="ttl1" title="Stellar object">Q1</a> /
-                        <a href="./uiTop_1-1.php?fName=S00001" class="ttl1" title="Solar sytem">Solar system</a>
+                        <a href="./uiTop?fName=G00001" class="ttl1" title="Galaxy">Galaxy</a> /
+                        <a href="./uiTop?fName=A00001" class="ttl1" title="Stellar object">Q1</a> /
+                        <a href="./uiTop?fName=S00001" class="ttl1" title="Solar sytem">Solar system</a>
 
                     </h3>
 
@@ -100,7 +100,7 @@
 
 				if (type == "planet") {
 					/// Planet view selected
-					require "ctrlPanel_planet_1-0.php";
+					require "ctrlPanel_planet.php";
 				} else {
 					/// If lost in the universe
 					require "localizer.php";	

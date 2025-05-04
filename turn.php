@@ -14,12 +14,16 @@
     $ERRS = [];
     
     /// Gamedata
-    $Gamedata = $_SESSION;
+    $GamedataBlackKeys = array('conn');
+    $Gamedata = array();
+    foreach ($_SESSION as $sessKey => $sessVal) {
+        if (!in_array($sessKey, $GamedataBlackKeys)) $Gamedata[$sessKey] = $sessVal;
+    }
     $OLD_SESSION = $_SESSION;
     
     /// Forms
     $prev = FORM->reqc('fPrevPage');
-    $prev = !empty($prev) ? $prev : './uiTop_1-1.php';
+    $prev = !empty($prev) ? $prev : './uiTop.php';
     $db_export = empty(FORM->reqc('fDbExport')) ? False : True;
     //// Treat all player actions (building,...); count additions (or substractions)
     $Pvals = array();
@@ -112,8 +116,8 @@
         </tr>
         <tr>
             <!-- Js local storage - All turn's player inputs -->
-            <td><pre><data id="jsLocalStorage" class="data-main" ><script type="text/javascript">data_local_storage("jsLocalStorage")</script></td>
-            <td><pre><?php print_r($OLD_SESSION); ?></pre></td>
+            <td><pre class="lim-h-vh"><data id="jsLocalStorage" class="data-main" ><script type="text/javascript">data_local_storage("jsLocalStorage")</script></td>
+            <td><pre class="lim-h-vh"><?php print_r($OLD_SESSION); ?></pre></td>
         </tr>
     </table>
 
@@ -121,11 +125,14 @@
     
     <h2>Elements loaded</h2>
     <p><?php foreach ($Gamedata as $elem => $details): ?>
-        <?php echo $elem.' ('.$details['info']['type'].') '; ?>
+        <?php echo $elem.' ('.($details['info']['type'] ?? 'noneType').') '; ?>
     <?php endforeach;?></p>
 
     <h2>Gamedata</h2>
-    <a href="./session_destroyer">Destroy session</a>
+    <form action="./session_destroyer">
+        <input type="submit" value="Destroy session" style="color: black"/>
+    </form><br>
+    
     <table class="table-build1">
         <tr>
             <th>Logs</th>
