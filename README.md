@@ -3,6 +3,7 @@
 
 ## Requirements
 Init via requierments.php
+- Web server;
 - PHP version 8.3.14;
 - MySQL version 9.1.0;
 - Setup of DB.
