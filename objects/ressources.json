@@ -25,6 +25,30 @@
 			} 
 			
 		},
+		"coal" : {
+			"id" : 1,
+			"name": {
+				"fr" : "charbon",
+				"en" : "coal"
+			},
+			"recipe" : [
+				["raw_coal"]
+			]
+			
+		}
+		"raw_coal" : {
+			"id" : 5,
+			"name": {
+				"fr" : "charbon brute",
+				"en" : "Raw coal"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			} 
+			
+		},
 		"diamond" : {
 			"id" : 4,
 			"name": {
@@ -124,6 +148,17 @@
 			},
 			"materials" : [
 				["concrete"]
+			]
+		},
+		"steel" : {
+			"id" : 1,
+			"name": {
+				"fr" : "acier",
+				"en" : "steel"
+			},
+			"materials" : [
+				["iron_ingot"]
+				["coal"]
 			]
 		},
 		"glass" : {
