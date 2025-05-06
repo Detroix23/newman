@@ -53,19 +53,6 @@
 		]
 	},
 
-	"electronic_componentMK1": {
-		"id" : 4,
-		"name" : {
-			"fr" : "composanst éléctronique MK1",
-			"en" : "electronic component"
-		},
-		"recipe" : [
-			[{"r" : "gold", "cost": 2}],
-			[{"r" : "plastic", "cost": 1}],
-			[{"r" : "copper_ingot", "cost": 2}]
-		]
-	},
-
 	"batteryMK1": {
 		"id" : 4,
 		"name" : {
@@ -76,6 +63,20 @@
 			[{"r" : "lithium", "cost": 2}],
 			[{"r" : "plastic", "cost": 3}],
 			[{"r" : "copper_ingot", "cost": 1}]
+		]
+	}
+	"spacesportMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "Astroport MK1",
+			"en" : "spacesport MK1"
+		},
+		"recipe" : [
+			[{"r" : "armature", "cost": 500000}],
+			[{"r" : "plastic", "cost": 3000}],
+			[{"r" : "electric_wire", "cost": 10000}],
+			[{"r" : "electronic_componentMK1", "cost": 1000}]
+			[{"r" : "concrete", "cost": 1000000}]
 		]
 	}
 }
