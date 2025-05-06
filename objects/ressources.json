@@ -197,6 +197,17 @@
 			["iron_ingot"]
 		]
 		
+	},
+	"photovoltaic_panel_mk1" : {
+		"id" : 1,
+		"name": {
+			"fr" : "paneaux photovoltaïque Mk1",
+			"en" : "photovoltaic panel Mk1"
+		},
+		"recipe" : [
+			["iron_ingot"]
+		]
+		
 	}
 		
 	}
