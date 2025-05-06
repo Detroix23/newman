@@ -54,6 +54,11 @@
 			"name": {
 				"fr" : "Diamants",
 				"en" : "Diamonds"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
 			}
 		},
 		"iron_ingot" : {
