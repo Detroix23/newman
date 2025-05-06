@@ -205,7 +205,10 @@
 			"en" : "photovoltaic panel Mk1"
 		},
 		"recipe" : [
-			["iron_ingot"]
+			["glass"],
+			["electric_wire"],
+			["plastic"]
+			["armature"]
 		]
 		
 	}
