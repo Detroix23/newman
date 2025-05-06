@@ -224,9 +224,19 @@
 			"recipe" : [
 				["iron_ingot"]
 			]
-			
+		},
+		"electronic_component_mk1" : {
+			"id" : 1,
+			"name": {
+				"fr" : "composanst éléctronique MK1",
+				"en" : "electronic component"
+			},
+			"recipe" : [
+				["gold_ingot"],
+				["plastic"],
+				["copper_ingot"]
+			]
 		}
-	"r3" : {
 	"drill_head_mk1" : {
 		"id" : 1,
 		"name": {
