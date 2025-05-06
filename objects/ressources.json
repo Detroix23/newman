@@ -138,14 +138,14 @@
 			
 		},
 		"gold_ingot" : {
-		"id" : 1,
-		"name": {
-			"fr" : "lingot d'or",
-			"en" : "gold ingot"
-		},
-		"recipe" : [
-			["raw_gold"]
-		]
+			"id" : 1,
+			"name": {
+				"fr" : "lingot d'or",
+				"en" : "gold ingot"
+			},
+			"recipe" : [
+				["raw_gold"]
+			]
 		
 	},
 		"raw_litium" : {
@@ -154,12 +154,24 @@
 				"fr" : "lithium brut",
 				"en" : "Raw_lithium"
 			},
+			"materials" : [
+				["plastic"]
+				["copper_ingot"]
+			]
+		} 
+		"electric_wire" : {
+			"id" : 5,
+			"name": {
+				"fr" : "fil éléctrique",
+				"en" : "electric wire"
+			},
 			"generation": {
 				"height": 0,
 				"width": 0,
 				"rarity": 0
 			}
 		} 
+		
 	},
 	
 	"r3" : {
@@ -174,6 +186,18 @@
 			]
 			
 		}
+	"r3" : {
+	"drill_head_mk1" : {
+		"id" : 1,
+		"name": {
+			"fr" : "Tête de foreuse Mk1",
+			"en" : "Drill head Mk1"
+		},
+		"recipe" : [
+			["iron_ingot"]
+		]
+		
+	}
 		
 	}
 }
