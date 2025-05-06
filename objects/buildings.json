@@ -75,8 +75,9 @@
 			[{"r" : "armature", "cost": 500000}],
 			[{"r" : "plastic", "cost": 3000}],
 			[{"r" : "electric_wire", "cost": 10000}],
-			[{"r" : "electronic_componentMK1", "cost": 1000}]
-			[{"r" : "concrete", "cost": 1000000}]
+			[{"r" : "electronic_componentMK1", "cost": 1000}],
+			[{"r" : "concrete", "cost": 1000000}],
+			[{"r" : "steel", "cost": 30000}]
 		]
 	}
 }
