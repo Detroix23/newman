@@ -1,0 +1,27 @@
+{
+    "_" : "General file for all static text translations.",
+
+    "top" : {
+        "title": {
+            "en" : "Newman",
+            "fr" : "Nouvel Homme"
+        },
+        "quickAccess" : {
+            "en" : "Quick access",
+            "fr" : "Accès rapide"
+        },
+        "settingMain" : {
+            "en" : "Settings O",
+            "fr" : "Paramètres O"
+        },
+        "turnButton" : {
+            "en" : "Turn >",
+            "fr" : "Tour >"
+        }
+    }
+
+
+
+
+
+}

@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    /* overflow: hidden; */
+}
+
+.fond-etoile {
+    font-size: 8px;
+    width: 500%;
+    height: 500vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+	z-index: 7;
+}
+
+.star {
+    background-color: white;
+    border-radius: 50%;
+}
+
+.satelit0, .satelit1, .planet0, .planet1, .planet2, .planet3, .planet4, .planet5, .planet6, .planet7, .planet8, .planet9, .planet10, .planet11, .planet12, .planet13 {
+    position: absolute;
+}
+
+.planet0::before, .planet1::before, .planet2::before, .satelit0::before, .satelit1::before, .planet3::before, .planet4::before, .planet5::before, .planet6::before, .planet7::before, .planet8::before, .planet9::before, .planet10::before, .planet11::before, .planet12::before, .planet13::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation: orbit 30s linear infinite;
+}
+
+@keyframes orbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(var(--orbit-distance)) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(var(--orbit-distance)) rotate(-360deg);
+    }
+}
+
+.planet {
+    /* --orbit-distance: calc(10em + (var(--i) * 5em)); /* Exemple de distance d'orbite variable */ */
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translate(var(--orbit-distance)) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translate(var(--orbit-distance)) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    animation: orbit var(--orbit-duration) linear infinite, spin var(--spin-duration) linear infinite;
+    transform-origin: center;
+}
+
+.planet-container {
+    animation: orbit var(--orbit-duration) linear infinite;
+}
+
+.planet {
+    animation: spin var(--spin-duration) linear infinite;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translate(var(--orbit-distance)) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translate(var(--orbit-distance)) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.planet :hover{
+	box-shadow: 0 0 3em rgb(255, 128, 0)";
+}

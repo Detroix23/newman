@@ -1,0 +1,93 @@
+{
+	"drillMk1": {
+		"id" : 1,
+		"name" : {
+			"fr": "Foreuse Mk1",
+			"en": "Drill Mk1"
+		},
+		"recipe" : [
+			[{"iron_ingot": 5}]
+		]
+	},
+	"factoryMk1": {
+		"id" : 2,
+		"name" : {
+			"fr": "Usine Mk1",
+			"en": "Factory Mk1"
+		},
+		"recipe" : [
+			[{"iron_ingot" : 10}]
+		]
+	},
+
+	"pumpjackMK1": {
+		"id" : 3,
+		"name" : {
+			"fr" : "Chevalet de pompage MK1",
+			"en" : "pumpjack MK1"
+		},
+		"recipe" : [
+			[{"r" : "iron", "cost": 5}]
+		]
+	},
+	
+	"refineryMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "raffinerie MK1",
+			"en" : "refinery MK1"
+		},
+		"recipe" : [
+			[{"r" : "iron", "cost": 10}],
+			[{"r" : "armature", "cost": 2}]
+		]
+	},
+	"wellMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "puit MK1",
+			"en" : "well MK1"
+		},
+		"recipe" : [
+			[{"r" : "armature", "cost": 5}]               
+		]
+	},
+	"photovoltaic_panelsMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "panneaux photovoltaïque",
+			"en" : "photovoltaic panels"
+		},
+		"recipe" : [
+			[{"r" : "glass", "cost": 2}],
+			[{"r" : "armature", "cost": 1}],
+			[{"r" : "copper_ingot", "cost": 2}]
+		]
+	},
+
+	"electronic_componentMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "composanst éléctronique MK1",
+			"en" : "electronic component"
+		},
+		"recipe" : [
+			[{"r" : "gold", "cost": 2}],
+			[{"r" : "plastic", "cost": 1}],
+			[{"r" : "copper_ingot", "cost": 2}]
+		]
+	},
+
+	"batteryMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "batterie MK1",
+			"en" : "battery MK1"
+		},
+		"recipe" : [
+			[{"r" : "lithium", "cost": 2}],
+			[{"r" : "plastic", "cost": 3}],
+			[{"r" : "copper_ingot", "cost": 1}]
+		]
+	}
+}

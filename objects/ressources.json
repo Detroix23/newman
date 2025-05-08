@@ -1,0 +1,181 @@
+{
+	"r1" : {
+		"raw_iron" : {
+			"id" : 6,
+			"name": {
+				"fr" : "Fer brut",
+				"en" : "Raw iron"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			} 
+		},
+		"raw_copper" : {
+			"id" : 5,
+			"name": {
+				"fr" : "Cuivre brut",
+				"en" : "Raw copper"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			} 
+			
+		},
+		"diamond" : {
+			"id" : 4,
+			"name": {
+				"fr" : "Diamants",
+				"en" : "Diamonds"
+			}
+		},
+		"iron_ingot" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Fer",
+				"en" : "Iron"
+			},
+			"recipe" : ["raw_iron"]
+		},
+		"copper_ingot" : {
+			"id" : 2,
+			"name": {
+				"fr" : "Cuivre",
+				"en" : "Copper"
+			},
+			"recipe" : ["raw_copper"]
+		},
+		"sand" : {
+			"id" : 3,
+			"name": {
+				"fr" : "sable",
+				"en" : "sand"
+			},
+			"materials" : [
+				["sand"]
+			]
+		},
+		"raw_gold" : {
+			"id" : 1,
+			"name": {
+				"fr" : "or brut",
+				"en" : "raw gold"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			} 
+			
+		},
+		"litium" : {
+			"id" : 5,
+			"name": {
+				"fr" : "lithium",
+				"en" : "lithium"
+			},
+			"recipe" : [
+				["raw_lithium"]
+			] 
+			
+		}
+	},
+	
+	"r2" : {
+		"armature" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Armature",
+				"en" : "Armature"
+			},
+			"recipe" : [
+				["iron_ingot"]
+			]
+			
+		}, 
+		"plastic" : {
+			"id" : 1,
+			"name": {
+				"fr" : "plastic",
+				"en" : "plastic"
+			},
+			"materials" : [
+				["plastic"]
+			]
+		},
+		"cement" : {
+			"id" : 1,
+			"name": {
+				"fr" : "ciment",
+				"en" : "cement"
+			},
+			"materials" : [
+				["cement"]
+			]
+		},
+		"concrete" : {
+			"id" : 1,
+			"name": {
+				"fr" : "béton",
+				"en" : "concrete"
+			},
+			"materials" : [
+				["concrete"]
+			]
+		},
+		"glass" : {
+			"id" : 1,
+			"name": {
+				"fr" : "verre",
+				"en" : "glass"
+			},
+			"recipe" : [
+				["sand"]
+			]
+			
+		},
+		"gold_ingot" : {
+		"id" : 1,
+		"name": {
+			"fr" : "lingot d'or",
+			"en" : "gold ingot"
+		},
+		"recipe" : [
+			["raw_gold"]
+		]
+		
+	},
+		"raw_litium" : {
+			"id" : 5,
+			"name": {
+				"fr" : "lithium brut",
+				"en" : "Raw_lithium"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			}
+		} 
+	},
+	
+	"r3" : {
+		"drill_head_mk1" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Tête de foreuse Mk1",
+				"en" : "Drill head Mk1"
+			},
+			"recipe" : [
+				["iron_ingot"]
+			]
+			
+		}
+		
+	}
+}
+
+
