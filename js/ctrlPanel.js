@@ -106,6 +106,7 @@ function changes_listen(e) {
 		// Vars
 		const etarget = e.target;
 		const inid = etarget.id;
+		const input_building_name = etarget.building;
 		/// Getting element name
 		//// Elem definition on top
 		/// Modify it if already exists
@@ -113,7 +114,7 @@ function changes_listen(e) {
 		if (localStorage.hasOwnProperty(elemName)) {
 			infos = JSON.parse(localStorage.getItem(elemName));
 		}
-		console.log("GAME - Input changed: " + etarget + "; id:" + inid);
+		console.log("GAME - Input changed: " + etarget + "; id:" + inid + "; building:" + input_building_name);
 		// White list
 		if (one_common(etarget.classList, inp_class_whitelist)) {
 			if (etarget.type == 'number') {
@@ -126,6 +127,12 @@ function changes_listen(e) {
 			//alert("ElemName: " + elemName + "; Infos: " + infos)
 			localStorage.setItem(elemName, JSON.stringify(infos));
 		}
+
+		// Update turn form
+		const input_user_inputs = document.querySelector("#input-turn-hidden-userInputs");
+		const local_storage_string = stringify_local_storage();
+		input_user_inputs.value = local_storage_string;
+
 	}
 	// Stop useless travels
 	e.stopPropagation;

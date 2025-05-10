@@ -1,3 +1,17 @@
+<!DOCTYPE HTML>
+<html class="html-top">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Next turn...</title>
+
+    <link rel="stylesheet" href="./css/general1.css">
+    <script src="./js/common.js"></script>
+</head>
+
+<body class="ctnr-body">
+
 <?php
     // Opened by the turn form, calculate revenues, and go back to the last page
     
@@ -13,6 +27,19 @@
     // Loading
     $ERRS = [];
     
+    /// User inputs
+    $USER_INPUTS_STRING = $_POST['fUserInputs'];
+    $USER_INPUTS = [];
+    /// Must double encode
+    if ($USER_INPUTS_STRING) {
+        $USER_INPUTS_SEMI = json_decode($USER_INPUTS_STRING, flags: JSON_THROW_ON_ERROR);
+        foreach ($USER_INPUTS_SEMI as $element => $inputs_string) {
+            $USER_INPUTS[$element] = json_decode($inputs_string);
+        }
+    } else {
+        $USER_INPUTS = [];
+    }
+
     /// Gamedata
     $GamedataBlackKeys = array('conn');
     $Gamedata = array();
@@ -39,13 +66,14 @@
     $conn_elem = new mysqli(CONN_CREDITS[0], CONN_CREDITS[1], CONN_CREDITS[2], 'nm_elems');
     $conn_const = new mysqli(CONN_CREDITS[0], CONN_CREDITS[1], CONN_CREDITS[2], 'nm_const');
     $JSON = [];
-    /// Add to Gamedata
 
+    /// Add to Gamedata
     foreach ($Gamedata as $elem => $info) {
         // Calc
         /// Verif
+        //// TODO
 
-        /// Update
+        
         
 
         // Export to DB
@@ -78,21 +106,14 @@
             }
         }
     }
+
+    /// User inputs; buildings
+    foreach ($USER_INPUTS as $element_name => $inputs) {
+        foreach ($inputs as $input_id => $input_value) {
+            $building = substr($input_id, 20);
+        }
+    }
 ?>
-
-<!DOCTYPE HTML>
-<html class="html-top">
-
-<head>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Next turn...</title>
-
-    <link rel="stylesheet" href="./css/general1.css">
-    <script src="./js/common.js"></script>
-</head>
-
-<body class="ctnr-body">
 
     <?php if ($session_loaded): ?>
         <h2>Loading session</h2>
@@ -128,7 +149,7 @@
         <?php echo $elem.' ('.($details['info']['type'] ?? 'noneType').') '; ?>
     <?php endforeach;?></p>
 
-    <h2>Gamedata</h2>
+    <h2>User inputs</h2>
     <form action="./session_destroyer">
         <input type="submit" value="Destroy session" style="color: black"/>
     </form><br>
@@ -136,11 +157,11 @@
     <table class="table-build1">
         <tr>
             <th>Logs</th>
-            <th>New Session</th>
+            <th>Inputs</th>
         </tr>
         <tr>
             <td>No logs</td>
-            <td>No updates</td>
+            <td><pre class="lim-h-vh"><?php print_r($USER_INPUTS);?></pre></td>
         </tr>
     </table>
     <br>
@@ -152,7 +173,7 @@
         <input type="submit" value="Export to DB" style="color: black;">
     </form>
 
-    <h2>Local data</h2> 
+    <h2>Original data</h2> 
     <table class="table-build1">
         <tr>
             <th>Buildings</th>
@@ -160,9 +181,9 @@
             <th>Info</th>
         </tr>
         <tr>
-            <td><pre><?php print_r($JSON['b']);?></pre></td>
-            <td><pre><?php print_r($JSON['r']);?></pre></td>
-            <td><pre><?php ?></pre></td>
+            <td><pre class="lim-h-vh"><?php print_r($JSON['b']);?></pre></td>
+            <td><pre class="lim-h-vh"><?php print_r($JSON['r']);?></pre></td>
+            <td><pre class="lim-h-vh"><?php ?></pre></td>
         </tr>
     </table>
     

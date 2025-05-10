@@ -594,7 +594,7 @@
 					$find = True;
 				}
 				else if (is_array($hay)) { 		// Else if array, recursion.
-					$find = in_nest_array($needle, $hay);
+					$find = $this->search_deep($needle, $hay);
 				}
 				$i++;
 			}

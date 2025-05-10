@@ -74,3 +74,25 @@ function data_local_storage(eId) {
         jsLocalStorage.innerHTML = jsLocalStorageTxt;
     }
 }
+
+function stringify_local_storage() {
+    const key_blacklist = ['_'];
+    let accepted_items = {};
+    let local_storage_string = "";
+    if (localStorage.length !== 0) {
+        const len_ls = localStorage.length;
+        for (i = 0; i < len_ls; i++) {
+            const ls_key = localStorage.key(i);
+            const ls_value = localStorage.getItem(ls_key);
+            if (!key_blacklist.includes(ls_key)) {
+                accepted_items[ls_key] = ls_value;
+            }
+        }
+        local_storage_string = JSON.stringify(accepted_items);
+    } else {
+        localStorage.setItem("_", "Local Js storage: mainly saving player's inputs"); 
+        throw "Empty local storage";
+    }
+    return local_storage_string;
+}
+

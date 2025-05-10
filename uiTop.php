@@ -117,7 +117,11 @@
 					// $pageUrl = "http" . ((($_SERVER['HTTPS'] ?? "") == 'on') ? "s" : "") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 					$pageUri = $_SERVER['REQUEST_URI'];
 				?>
+                <!-- Communicate last page -->
                 <input type="hidden" id="input-turn-hid-prevPage" name="fPrevPage" value="<?=$pageUri?>">
+                <!-- Communicate JS Local storage -->
+                <input type="hidden" id="input-turn-hidden-userInputs" name="fUserInputs" value="">
+
                 <button type="submit" tabindex="1" id="btn-turn" class="btn-turn ttl1">
                     <?= $all['txt']['top']['turnButton'][$lang] ?>
                 </button>

@@ -108,5 +108,6 @@
 
 
     //// Log
-    echo "<!-- DYNAMICS - Loaded: Top loader & data -->";
+    
 ?>
+<!-- DYNAMICS - Loaded: Top loader & data -->

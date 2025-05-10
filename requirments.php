@@ -3,7 +3,12 @@
 $LOGS = array();
 $SQL = array();
 /// Check user inputs
-$postInstall = $_POST['fInstall'] ?? "";
+if (!empty($_POST['fInstall'])) {
+	$postInstall = $_POST['fInstall'];
+} else {
+	$postInstall = "";
+}
+
 $go = ($postInstall == "go");
 
 if ($go) {
@@ -17,7 +22,7 @@ if ($go) {
 	//// Logins
 	require_once "./php/const.php";
 	try {
-		$conn = mysqli_connect(CONN_CREDITS[0], CONN_CREDITS[1], CONN_CREDITS[2]);
+		$conn = mysqli_connect(CONN_CREDITS_HOST, CONN_CREDITS_USER, CONN_CREDITS_PWD);
 		$LOG['sqlConnection'] = "OK";
 	} catch (Exception $e) {
 		$LOG['sqlConnection'] = $e->getMessage();
@@ -44,8 +49,8 @@ if ($go) {
 	//// If DBs are set up
 	if ($SQL['create']['const']['result'] && $SQL['create']['const']['result']) {
 		///// New connections
-		$conn_elems = mysqli_connect(CONN_CREDITS[0], CONN_CREDITS[1], CONN_CREDITS[2], 'nm_elems');
-		$conn_const = mysqli_connect(CONN_CREDITS[0], CONN_CREDITS[1], CONN_CREDITS[2], 'nm_const');
+		$conn_elems = mysqli_connect(CONN_CREDITS_HOST, CONN_CREDITS_USER, CONN_CREDITS_PWD, 'nm_elems');
+		$conn_const = mysqli_connect(CONN_CREDITS_HOST, CONN_CREDITS_USER, CONN_CREDITS_PWD, 'nm_const');
 
 		$SQL['tables']['const']['query'] = file_get_contents("./sql/nm_const.sql");
 		$SQL['tables']['elems']['query'] = file_get_contents("./sql/nm_elems.sql");
@@ -126,7 +131,7 @@ if ($go) {
 	<h3>Database</h3>
 	<ul>
 		
-		<li>Default connection logins are <?= "host=<b>".CONN_CREDITS[0]."</b>, user=<b>".CONN_CREDITS[1]."</b>, password=<b>".CONN_CREDITS[2]."</b>";?>;</li>
+		<li>Default connection logins are <?= "host=<b>".CONN_CREDITS_HOST."</b>, user=<b>".CONN_CREDITS_USER."</b>, password=<b>".CONN_CREDITS_PWD."</b>";?>;</li>
 		<li>Modify logins in <b><a href="./php/const.php">const.php</a></b> (edit it);</li>
 		<li>Connection status: <b><?= $LOG['sqlConnection'] ?></b>;</li>
 		<?php if ($LOG['sqlConnection'] == "OK"): ?>
