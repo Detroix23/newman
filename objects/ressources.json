@@ -35,7 +35,7 @@
 				["raw_coal"]
 			]
 			
-		}
+		},
 		"raw_coal" : {
 			"id" : 5,
 			"name": {
@@ -162,7 +162,7 @@
 				"en" : "steel"
 			},
 			"materials" : [
-				["iron_ingot"]
+				["iron_ingot"],
 				["coal"]
 			]
 		},
@@ -195,10 +195,10 @@
 				"en" : "Raw_lithium"
 			},
 			"materials" : [
-				["plastic"]
+				["plastic"],
 				["copper_ingot"]
 			]
-		} 
+		},
 		"electric_wire" : {
 			"id" : 5,
 			"name": {
@@ -236,32 +236,21 @@
 				["plastic"],
 				["copper_ingot"]
 			]
+		},
+		"photovoltaic_panel_mk1" : {
+			"id" : 1,
+			"name": {
+				"fr" : "paneaux photovoltaïque Mk1",
+				"en" : "photovoltaic panel Mk1"
+			},
+			"recipe" : [
+				["glass"],
+				["electric_wire"],
+				["plastic"],
+				["armature"]
+			]
+			
 		}
-	"drill_head_mk1" : {
-		"id" : 1,
-		"name": {
-			"fr" : "Tête de foreuse Mk1",
-			"en" : "Drill head Mk1"
-		},
-		"recipe" : [
-			["iron_ingot"]
-		]
-		
-	},
-	"photovoltaic_panel_mk1" : {
-		"id" : 1,
-		"name": {
-			"fr" : "paneaux photovoltaïque Mk1",
-			"en" : "photovoltaic panel Mk1"
-		},
-		"recipe" : [
-			["glass"],
-			["electric_wire"],
-			["plastic"]
-			["armature"]
-		]
-		
-	}
 	}
 }
 

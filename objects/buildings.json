@@ -64,7 +64,7 @@
 			[{"r" : "plastic", "cost": 3}],
 			[{"r" : "copper_ingot", "cost": 1}]
 		]
-	}
+	},
 	"spacesportMK1": {
 		"id" : 4,
 		"name" : {
