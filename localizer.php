@@ -16,7 +16,7 @@
 	$legend = 'Elements';
 	
 	// Generate table
-	$list = UI->generate_list("", $allLinks);
+	$list = UI->generate_list([], $allLinks);
 
 	
 ?>

@@ -128,7 +128,7 @@
                             <button id="btn-plus<?=$iid?>" max="5" class="btn-incr btn-plus1">+</button>
                         </td> -->
                         <td id="label-itemVal1-<?=$iid?>" class="label-itemValue1">
-                            <input id="inp-numb-itemValue1-<?=$bname;?>" class="inp-numb1 itemValue1" building="<?=$bname;?>" type="number" form="form-game" name="fBuild_<?=name?>_<?=$bname?>" value="<?= $bValSum ?>" />
+                            <input id="inp-building-itemValue1-<?=$bname;?>" class="inp-numb1 itemValue1" building="<?=$bname;?>" type="number" name="fBuild_<?=name?>_<?=$bname?>" value="<?= $bValSum ?>" />
                         </td>
                         <!-- <td id="ctnr-btn-minus<?=$iid?>" class="label-itemMinus">
                             <button id="btn-minus<?=$iid?>" max="2" class="btn-incr btn-minus1">-</button>

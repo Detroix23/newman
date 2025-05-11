@@ -1,3 +1,17 @@
+<?php
+    // Absolute basis
+    // Init
+    declare(strict_types=1);
+
+    session_start();
+    $session_loaded = true;
+
+    include './php/common.php';
+
+    /// Forms
+    $prev = !empty($_POST['fPrevPage']) ? $_POST['fPrevPage'] : './uiTop.php';
+    $db_export = empty(FORM->reqc('fDbExport')) ? False : True;
+?>
 <!DOCTYPE HTML>
 <html class="html-top">
 
@@ -12,17 +26,15 @@
 
 <body class="ctnr-body">
 
+<h1>TURN</h1>
+<br><a href="<?=$prev?>">Back to game (<?=htmlspecialchars($prev);?>)</a>
+
 <?php
     // Opened by the turn form, calculate revenues, and go back to the last page
+    // Only if turn is not already calculated
+    if (empty($_SESSION['TurnComputed']) || !$_SESSION['TurnComputed']):
+
     
-    // Init
-    $session_loaded = false;
-    if (session_status() !== PHP_SESSION_ACTIVE) {
-        session_start();
-        $session_loaded = true;
-    }
-    
-    include './php/common.php';
 
     // Loading
     $ERRS = [];
@@ -40,31 +52,18 @@
         $USER_INPUTS = [];
     }
 
-    /// Gamedata
-    $GamedataBlackKeys = array('conn');
+    /// Gamedata, all buildings, ressources, infos, that will be the updated next session
+    $GamedataBlackKeys = array('conn', 'TurnComputed');
     $Gamedata = array();
     foreach ($_SESSION as $sessKey => $sessVal) {
         if (!in_array($sessKey, $GamedataBlackKeys)) $Gamedata[$sessKey] = $sessVal;
     }
     $OLD_SESSION = $_SESSION;
-    
-    /// Forms
-    $prev = FORM->reqc('fPrevPage');
-    $prev = !empty($prev) ? $prev : './uiTop.php';
-    $db_export = empty(FORM->reqc('fDbExport')) ? False : True;
-    //// Treat all player actions (building,...); count additions (or substractions)
-    $Pvals = array();
-    $PvalBlackKeys = array('fPrevPage');
-    foreach ($_POST as $PostKey => $PostValue) {
-        if (!in_array($PostKey, $PvalBlackKeys)) {
-            $Pvals[$PostKey] = $PostValue; 
-        }
-    }
 
     /// Db
     $SQL = [];
-    $conn_elem = new mysqli(CONN_CREDITS[0], CONN_CREDITS[1], CONN_CREDITS[2], 'nm_elems');
-    $conn_const = new mysqli(CONN_CREDITS[0], CONN_CREDITS[1], CONN_CREDITS[2], 'nm_const');
+    $conn_elem  = new mysqli(CONN_CREDITS_HOST, CONN_CREDITS_USER, CONN_CREDITS_PWD, 'nm_elems');
+    $conn_const = new mysqli(CONN_CREDITS_HOST, CONN_CREDITS_USER, CONN_CREDITS_PWD, 'nm_const');
     $JSON = [];
 
     /// Add to Gamedata
@@ -107,37 +106,55 @@
         }
     }
 
+
     /// User inputs; buildings
     foreach ($USER_INPUTS as $element_name => $inputs) {
         foreach ($inputs as $input_id => $input_value) {
-            $building = substr($input_id, 20);
+            /// Unspecialized building construction
+            if (substr($input_id, 0, 24) === 'inp-building-itemValue1-') {
+                /// Remove the id part
+                $building = substr($input_id, 24);
+                /// Update Gamedata info the building
+                $Gamedata[$element_name]['b'][$building]['unspecified'] = $input_value;
+            }
+
         }
     }
-?>
 
-    <?php if ($session_loaded): ?>
-        <h2>Loading session</h2>
-    <?php endif; ?>
+    // Final update
+    $_SESSION = $Gamedata;
+    $_SESSION['TurnComputed'] = True;
+    foreach ($_POST as $post_key => $post_value) {
+        /// White list to clear POST
+        if (!in_array($post_key, ['fPrevPage', 'fTurnComputed'])) {
+            unset($_POST[$post_key]);
+        }
+    }
+
+?>
+    <script>
+        localStorage.clear();
+    </script>
+
 
     <?php if ($ERRS !== array()): ?>
     <h2>Errors</h2>
     <pre><?php print_r($ERRS); ?></pre>
     <?php endif; ?>
 
-    <h1>TURN</h1>
 
     <img src="./img/anim-load-rocket1.gif" alt="Loading animation" style="width:150px;height:150px;">
-    <br><a href="<?=$prev?>">Back to game (<?=$prev?>)</a>
+    
     
     <h1>RECEIVED</h1>
     <table class="table-build1">
         <tr>
-            <th>Game inputs</th>
+            <th>Player inputs</th>
             <th>Old Session</th>
         </tr>
         <tr>
             <!-- Js local storage - All turn's player inputs -->
-            <td><pre class="lim-h-vh"><data id="jsLocalStorage" class="data-main" ><script type="text/javascript">data_local_storage("jsLocalStorage")</script></td>
+            <td><pre class="lim-h-vh"><?php print_r($USER_INPUTS); ?></pre></td>
             <td><pre class="lim-h-vh"><?php print_r($OLD_SESSION); ?></pre></td>
         </tr>
     </table>
@@ -157,11 +174,11 @@
     <table class="table-build1">
         <tr>
             <th>Logs</th>
-            <th>Inputs</th>
+            <th>Player inputs</th>
         </tr>
         <tr>
             <td>No logs</td>
-            <td><pre class="lim-h-vh"><?php print_r($USER_INPUTS);?></pre></td>
+            <td><pre class="lim-h-vh"><?php print_r($_POST);?></pre></td>
         </tr>
     </table>
     <br>
@@ -186,6 +203,31 @@
             <td><pre class="lim-h-vh"><?php ?></pre></td>
         </tr>
     </table>
+
+    <h2>Updated data</h2> 
+    <table class="table-build1">
+        <tr>
+            <th>Buildings</th>
+            <th>Ressources</th>
+            <th>Info</th>
+        </tr>
+        <tr>
+            <td><pre class="lim-h-vh"><?php print_r($_SESSION[$elem]['b']);?></pre></td>
+            <td><pre class="lim-h-vh"><?php print_r($_SESSION[$elem]['r']);?></pre></td>
+            <td><pre class="lim-h-vh"><?php ?></pre></td>
+        </tr>
+    </table>
+
+<?php else: ?>
     
+    <h2>Turn already computed</h2>
+
+
+
+
+
+
+<?php endif; ?>
+
 </body>
 </html>

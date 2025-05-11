@@ -7,12 +7,13 @@
 	*  Variables: Constants that might be used often to reduce writtings or flags
 	*/
 	include "const.php";
+
 	
 	/**
 	* Created : 20/12/2024
 	* Function : Removing spaces, slashes, securing the user's input values
 	*/
-	function test_input($val) {
+	function test_input(string $val): string {
 		$val = trim($val);
 		$val = stripslashes($val);
 		$val = htmlspecialchars($val);
@@ -29,7 +30,7 @@
 		* Created : ORIGINAL 20/12/2024 - EDIT1 02/03/2025		
 		* Function : DUPLICATE for form class. Removing spaces, slashes, securing the user's input values
 		*/
-		function clean($val) {
+		function clean(string $val): string {
 			$val = trim($val);
 			$val = stripslashes($val);
 			$val = htmlspecialchars($val);
@@ -43,7 +44,9 @@
 		* Prereq : Be sure to put the func in a if that verifies the REQUEST_METHOD
 		* Returns : [bool] if success, True, otherwise False. Update vars by reference
 		*/
-		function get($fData, &$data, &$dataErr=NULL, $pattern="~.~", $errEmpty="Chain Required", $errFormat="Incorrect format") {
+		function get(string $fData, string &$data, &$dataErr=NULL, string $pattern="~.~", 
+			string $errEmpty="Chain Required", string $errFormat="Incorrect format"
+			): bool {
 			
 			$success = False;
 			
@@ -64,7 +67,10 @@
 			return $success; 
 		}
 		
-		function post($fData, &$data, &$dataErr=NULL, $pattern="~.~", $errEmpty="Chain Required", $errFormat="Incorrect format") {
+		function post(string $fData, string &$data, &$dataErr=NULL, string $pattern="~.~",
+		 	string $errEmpty="Chain Required", string $errFormat="Incorrect format"
+			): bool {
+
 			$success = False;
 			
 			if (empty($_POST["$fData"]) /* AND $_GET["iChain"] !== "0" */ ) {
@@ -84,18 +90,18 @@
 			return $success; 
 		}
 		
-		function reqc($fName, &$dataErr=NULL, $pattern="~.~", $errEmpty="Chain Required", $errFormat="Incorrect format") {
+		function reqc(string $fName, &$dataErr=NULL, string $pattern="~.~", string $errEmpty="Chain Required", string $errFormat="Incorrect format"): string {
 			/**
 			 * Function: Retrive data from form via REQUEST.
 			 * Returns: Data if exists, False (bool) if not.
 			 */
 
 			$success = False;
-			$data = NULL;
+			$data = "";
 
 			if (!isset($_REQUEST["$fName"])) {
 				$dataErr = $errEmpty;
-				$data = False;
+				$data = "";
 
 			} else {	
 				/// Verif data
@@ -123,7 +129,7 @@
 		* Class : Store nicely everything about the UI. Note the parent block of each category is still in the html file
 		*/
 		
-		function generate_table($th, $tds, $class=null, $bk="#") {
+		function generate_table(array $th, array $tds, string|null $class=null, string $bk="#"): string {
 			/**
 			* Function: Echoes a HTML table.
 			* Args:
@@ -175,11 +181,11 @@
 			return $table;
 		}
 		
-		function generate_list($head, $lines, $class=null, $type="ulist") {
+		function generate_list(array $head, array $lines, string $class="", string $type="ulist"): string {
 			/**
 			* Function: List arrays
 			* Args:
-				$head (array): First line. Empty string to ignore.
+				$head (array): First line. Empty array to ignore.
 			*/
 			
 			// Vars
@@ -251,7 +257,7 @@
 		const ASSOC_ONE_RECORD = 1<<0;
 		const ASSOC_KEY_1 = 1<<1;
 		
-		function connect($db=NULL, $db_credit=CONN_CREDITS, $pre=DB_PREF) {
+		function connect(string|array|null $db=NULL, array $db_credit=CONN_CREDITS, string $pre=DB_PREF): mysqli|false {
 			/**
 			* Function: Connect to DB using a creditential array. DB non mandatory.
 			* Args:
@@ -300,7 +306,7 @@
 		}
 		
 		
-		function fetch($conn, $sql_request, $flags=NULL) {
+		function fetch(mysqli $conn, string $sql_request, $flags=NULL): array|false {
 			/**
 			* Function: Sends a sql request to the DB and process it into usable PHP and puts it into an array ["elem", "elem"] or ["1st elem" => "2nd elem"] or ["1st" => ["2nd", "3rd", ...]]
 			*/
@@ -641,6 +647,17 @@
 			return implode($string);
 		}
 		
+		function filter(array $impure_array, array $filter, bool $is_blacklist=True): array {
+			$pure_array = array();
+			foreach ($impure_array as $value) {
+				if ($is_blacklist AND !in_array($value, $filter)) {
+					$pure_array[] = $value;
+				} else if (!$is_blacklist AND in_array($value, $filter)) {
+					$pure_array[] = $value;
+				}
+			}
+			return $pure_array;
+		}
 		
 	}
 	

@@ -2,6 +2,8 @@
 	if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 	/// Paths
 	define('__ROOT__', dirname(dirname(__FILE__)));
+    /// Renable turn computation
+    $_SESSION['TurnComputed'] = False;
 
 	/// Main common functions
 	include "./php/common.php";
