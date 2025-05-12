@@ -121,7 +121,7 @@
                     ?>
                     <tr class="line-item-main">
                         <td>
-                            <button id="btn-fold-item<?=$iid?>" class="btn-fold-item">*</button>
+                            <button id="btn-fold-item<?=$iid;?>" class="btn-fold-item">*</button>
                         </td>
                         <td class="label-itemKey1"><?= $all['b'][$bname]['name'][$lang];?> : </td>
                         <!-- <td id="ctnr-btn-plus<?=$iid?>" class="label-itemPlus">
@@ -134,11 +134,22 @@
                             <button id="btn-minus<?=$iid?>" max="2" class="btn-incr btn-minus1">-</button>
                         </td> -->
                     </tr>
-                    <tr id="targetOf-btn-fold-item<?=$iid?>" class="line-fold-item-details" style="visibility: collapse;">
-                        <td></td>
-                        <td>To</td>
-                        <td>be</td>
-                    </tr>
+
+                    <?php if ($bProds): /// If there is building production defined ?>
+                        <tbody id="targetOf-btn-fold-item<?=$iid;?>" class="ctnr-fold-item-details" style="display: none;">
+                        <?php foreach ($bProds as $bProdName => $bProdVal): ?>
+                        <!-- A great line of sub folder -->
+                        <tr id="targetOf-btn-fold-item<?=$bname."-".$bProdName?>" class="line-fold-building-production">
+                            <td></td>
+                            <td><?= $bProdName ?></td>
+                            <td>
+                                <input id="inp-building-production-<?=$bname."-".$bProdName;?>" class="inp-numb2 itemValue1" building="<?=$bname;?>" prodution="<?= $bProdName;?>" type="number" name="fBuild_<?=name;?>_<?=$bname;?>_<?=$bProdName;?>" value="<?= $bProdVal;?>" />
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    <?php endif;?>
+                    
                     <?php endforeach; ?>
                 </table>
             </div>

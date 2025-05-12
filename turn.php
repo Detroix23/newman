@@ -115,7 +115,11 @@
                 /// Remove the id part
                 $building = substr($input_id, 24);
                 /// Update Gamedata info the building
-                $Gamedata[$element_name]['b'][$building]['unspecified'] = $input_value;
+                if ($input_value <= 0) {
+                    $Gamedata[$element_name]['b'][$building]['unspecified'] = 0;
+                } else {
+                    $Gamedata[$element_name]['b'][$building]['unspecified'] = $input_value;
+                }
             }
 
         }

@@ -75,14 +75,14 @@ function clicks(e) {
 		// Item detail folders button
 		else if (e.target.classList.contains("btn-fold-item")) {
 			biid = e.target.id;
-			console.log("GAME - Item folder button pressed; id="+biid);
+			console.log("GAME - Item sub-folder button pressed; id="+biid);
 			/// Check for complementary folder
 			const folderItem = document.querySelector("#targetOf-" + biid);
-			let folderItemVisible = getStyle(folderItem, "visibility") !== "collapse";
+			let folderItemVisible = getStyle(folderItem, "display") !== "none";
 			if (folderItemVisible) {
-				folderItem.style.visibility = "collapse";
+				folderItem.style.display = "none";
 			} else {
-				folderItem.style.visibility = "visible";
+				folderItem.style.display = "inline";
 			}
 		}
 		
