@@ -7,6 +7,10 @@
 		},
 		"recipe" : [
 			[{"iron_ingot": 5}]
+		],
+		"production" : [
+			[{}, {"raw_iron": 5}],
+			{{}, "raw_copper": 5}
 		]
 	},
 	"factoryMk1": {
@@ -17,6 +21,10 @@
 		},
 		"recipe" : [
 			[{"iron_ingot" : 10}]
+		],
+		"production" : [
+			[{"raw_iron": 5}, {"iron_ingot": 3}],
+			[{"raw_copper": 5}, {"copper_ingot": 4}]
 		]
 	},
 
