@@ -271,6 +271,18 @@
 				["copper_ingot"]
 			]
 		},
+		"batteryMK1": {
+			"id" : 4,
+			"name" : {
+				"fr" : "batterie MK1",
+				"en" : "battery MK1"
+			},
+			"recipe" : [
+				["lithium"],
+				["plastic"],
+				["copper_ingot"]
+			]
+	},
 		"photovoltaic_panel_mk1" : {
 			"id" : 1,
 			"name": {
