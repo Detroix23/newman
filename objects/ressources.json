@@ -252,11 +252,10 @@
 				"fr" : "fil éléctrique",
 				"en" : "electric wire"
 			},
-			"generation": {
-				"height": 0,
-				"width": 0,
-				"rarity": 0
-			}
+			"materials" : [
+				["plastic"],
+				["copper_ingot"]
+			]
 		} 
 		
 	},
