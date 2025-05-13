@@ -39,7 +39,6 @@
 		],
 		"production" : [
 			[{}, {"oil": 5}],
-			[{}, {"water": 5}]
 		]
 	},
 	
@@ -65,7 +64,10 @@
 			"en" : "well MK1"
 		},
 		"recipe" : [
-			[{"r" : "armature", "cost": 5}]               
+			[{"r" : "armature", "cost": 2}]               
+		]
+		"production" : [
+			[{}, {"water": 5}]
 		]
 	},
 
