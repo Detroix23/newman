@@ -37,11 +37,24 @@
 			} 
 			
 		},
+		"raw_coal" : {
+			"id" : 1,
+			"name": {
+				"fr" : "charbon brut",
+				"en" : "Raw coal"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			} 
+			
+		},
 		"coal" : {
 			"id" : 1,
 			"name": {
 				"fr" : "charbon",
-				"en" : "coal"
+				"en" : "Coal"
 			},
 			"recipe" : [
 				["raw_coal"]
