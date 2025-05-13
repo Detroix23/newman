@@ -36,6 +36,9 @@
 		},
 		"recipe" : [
 			[{"r" : "iron", "cost": 5}]
+		],
+		"production" : [
+			[{}, {"petrol": 5}],
 		]
 	},
 	
