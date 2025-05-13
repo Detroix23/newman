@@ -36,11 +36,23 @@
 			]
 			
 		},
+		"petrol" : {
+			"id" : 6,
+			"name": {
+				"fr" : "Fer brut",
+				"en" : "Raw iron"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			} 
+		},
 		"raw_coal" : {
 			"id" : 5,
 			"name": {
-				"fr" : "charbon brute",
-				"en" : "Raw coal"
+				"fr" : "petrole",
+				"en" : "petrole"
 			},
 			"generation": {
 				"height": 0,
