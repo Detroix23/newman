@@ -82,13 +82,13 @@
 			"en" : "electronics factory MK1"
 		},
 		"recipe" : [
-			[{"r" : "iron", "cost": 30}],
-			[{"r" : "armature", "cost": 6}],
-			[{"r" : "plastic", "cost": 5}]
+			[{"r" : "iron", "cost": 3000}],
+			[{"r" : "armature", "cost": 600}],
+			[{"r" : "plastic", "cost": 500}]
 		]
 		"production" : [
-			[{"raw_gold" : 10}, {"fuel" : 3}],
-			[[{"raw_lithium" : 8}, {"water" : 30000}], {"plastic" : 2}],
+			[[{"plastic" : 20}, {"copper_ingot" : 19}], {"electric_wire" : 3}],
+			[[{"gold_ingot" : 8}, {"platic" : 30}, {"copper_ingot": 25}], {"electronic_component_mk1" : 1}],
 		]
 	},
 	"wellMK1": {
