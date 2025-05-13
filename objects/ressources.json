@@ -36,11 +36,11 @@
 			]
 			
 		},
-		"petrol" : {
+		"oil" : {
 			"id" : 6,
 			"name": {
-				"fr" : "Fer brut",
-				"en" : "Raw iron"
+				"fr" : "Pétrole",
+				"en" : "Oil"
 			},
 			"generation": {
 				"height": 0,
@@ -51,8 +51,8 @@
 		"raw_coal" : {
 			"id" : 5,
 			"name": {
-				"fr" : "petrole",
-				"en" : "petrole"
+				"fr" : "Charbon",
+				"en" : "Coal"
 			},
 			"generation": {
 				"height": 0,
@@ -144,7 +144,17 @@
 				"en" : "plastic"
 			},
 			"materials" : [
-				["plastic"]
+				["oil"]
+			]
+		},
+		"fuel" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Carburant",
+				"en" : "Fuel"
+			},
+			"materials" : [
+				["oil"]
 			]
 		},
 		"cement" : {
