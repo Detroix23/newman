@@ -38,7 +38,8 @@
 			[{"r" : "iron", "cost": 5}]
 		],
 		"production" : [
-			[{}, {"petrol": 5}],
+			[{}, {"oil": 5}],
+			[{}, {"water": 5}]
 		]
 	},
 	
@@ -51,6 +52,10 @@
 		"recipe" : [
 			[{"r" : "iron", "cost": 10}],
 			[{"r" : "armature", "cost": 2}]
+		]
+		"production" : [
+			[{"oil" : 10}, {"fuel" : 3}],
+			[{"oil" : 13}, {"plastic" : 7}],
 		]
 	},
 	"wellMK1": {
