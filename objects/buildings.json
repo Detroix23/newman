@@ -9,8 +9,8 @@
 			[{"iron_ingot": 5}]
 		],
 		"production" : [
-			[{}, {"raw_iron": 5}],
-			[{}, {"raw_copper": 5}]
+			[1, {}, {"raw_iron": 5}],
+			[1, {}, {"raw_copper": 5}]
 		]
 	},
 	"factoryMk1": {
@@ -23,10 +23,10 @@
 			[{"iron_ingot" : 10}]
 		],
 		"production" : [
-			[{"raw_iron": 5}, {"iron_ingot": 3}],
-			[{"raw_copper": 5}, {"copper_ingot": 4}]
-			[{"raw_coal":10}, {"coal": 4}]
-			[[{"ingot_iron": 20}, {"coal" : 40 }], {"steel": 4}]
+			[2, {"raw_iron": 5}, {"iron_ingot": 3}],
+			[2, {"raw_copper": 5}, {"copper_ingot": 4}]
+			[2, {"raw_coal":10}, {"coal": 4}]
+			[3, [{"ingot_iron": 20}, {"coal" : 40 }], {"steel": 4}]
 		]
 	},
 
@@ -40,7 +40,7 @@
 			[{"r" : "iron", "cost": 5}]
 		],
 		"production" : [
-			[{}, {"oil": 5}],
+			[5, {}, {"oil": 5}],
 		]
 	},
 	
@@ -55,8 +55,8 @@
 			[{"r" : "armature", "cost": 2}]
 		]
 		"production" : [
-			[{"oil" : 10}, {"fuel" : 3}],
-			[{"oil" : 13}, {"plastic" : 7}],
+			[10, {"oil" : 10}, {"fuel" : 3}],
+			[10, {"oil" : 13}, {"plastic" : 7}],
 		]
 	},
 	"ore_refineryMK1": {
@@ -71,8 +71,8 @@
 			[{"r" : "plastic", "cost": 5}]
 		]
 		"production" : [
-			[{"raw_gold" : 10}, {"fuel" : 3}],
-			[[{"raw_lithium" : 8}, {"water" : 30000}], {"plastic" : 2}],
+			[7, {"raw_gold" : 10}, {"gold_ingot" : 3}],
+			[7, [{"raw_lithium" : 8}, {"water" : 30000}], {"plastic" : 2}],
 		]
 	},
 	"electronics_factoryMK1": {
@@ -87,8 +87,8 @@
 			[{"r" : "plastic", "cost": 500}]
 		]
 		"production" : [
-			[[{"plastic" : 20}, {"copper_ingot" : 19}], {"electric_wire" : 3}],
-			[[{"gold_ingot" : 8}, {"platic" : 30}, {"copper_ingot": 25}], {"electronic_component_mk1" : 1}],
+			[15, [{"plastic" : 20}, {"copper_ingot" : 19}], {"electric_wire" : 3}],
+			[15, [{"gold_ingot" : 8}, {"platic" : 30}, {"copper_ingot": 25}], {"electronic_component_mk1" : 1}],
 		]
 	},
 	"wellMK1": {
@@ -101,7 +101,7 @@
 			[{"r" : "armature", "cost": 50}]               
 		]
 		"production" : [
-			[{}, {"water": 5}]
+			[1, {}, {"water": 5}]
 		]
 	},
 	"spacesportMK1": {
@@ -119,7 +119,7 @@
 			[{"r" : "steel", "cost": 30000}]
 		]
 		"production" : [
-			[{}, {}]
+			[]
 		]
 	}
 }
