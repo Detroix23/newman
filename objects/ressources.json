@@ -10,7 +10,19 @@
 				"height": 0,
 				"width": 0,
 				"rarity": 0
-			} 
+			}
+		},
+		"water" : {
+			"id" : 6,
+			"name": {
+				"fr" : "eau",
+				"en" : "water"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			}
 		},
 		"raw_copper" : {
 			"id" : 5,
