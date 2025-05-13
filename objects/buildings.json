@@ -3,7 +3,8 @@
 		"id" : 1,
 		"name" : {
 			"fr": "Foreuse Mk1",
-			"en": "Drill Mk1"
+			"en": "Drill Mk1",
+			"es" : "Perforar MK1"
 		},
 		"recipe" : [
 			[{"iron_ingot": 5}]
@@ -17,7 +18,8 @@
 		"id" : 2,
 		"name" : {
 			"fr": "Usine Mk1",
-			"en": "Factory Mk1"
+			"en": "Factory Mk1",
+			"es" : "Fábrica MK1"
 		},
 		"recipe" : [
 			[{"iron_ingot" : 10}]
@@ -34,7 +36,8 @@
 		"id" : 3,
 		"name" : {
 			"fr" : "Chevalet de pompage MK1",
-			"en" : "pumpjack MK1"
+			"en" : "Pumpjack MK1",
+			"es" : "Caballo de bombeo MK1"
 		},
 		"recipe" : [
 			[{"r" : "iron", "cost": 5}]
@@ -47,8 +50,9 @@
 	"refineryMK1": {
 		"id" : 4,
 		"name" : {
-			"fr" : "raffinerie MK1",
-			"en" : "refinery MK1"
+			"fr" : "Raffinerie MK1",
+			"en" : "Refinery MK1",
+			"es" : "Refinería MK1"
 		},
 		"recipe" : [
 			[{"r" : "iron", "cost": 10}],
@@ -62,8 +66,9 @@
 	"ore_refineryMK1": {
 		"id" : 4,
 		"name" : {
-			"fr" : "raffinerie de minerai MK1",
-			"en" : "ore refinery MK1"
+			"fr" : "Raffinerie de minerai MK1",
+			"en" : "Ore refinery MK1",
+			"es" : "Refinería de mineral MK1"
 		},
 		"recipe" : [
 			[{"r" : "iron", "cost": 30}],
@@ -78,8 +83,9 @@
 	"electronics_factoryMK1": {
 		"id" : 4,
 		"name" : {
-			"fr" : "usine d'éléctronique MK1",
-			"en" : "electronics factory MK1"
+			"fr" : "Usine d'éléctronique MK1",
+			"en" : "Electronics factory MK1",
+			"es" : "Fábrica de electrónica MK1"
 		},
 		"recipe" : [
 			[{"r" : "iron", "cost": 3000}],
@@ -94,8 +100,9 @@
 	"wellMK1": {
 		"id" : 4,
 		"name" : {
-			"fr" : "puit MK1",
-			"en" : "well MK1"
+			"fr" : "Puit MK1",
+			"en" : "Well MK1",
+			"es" : "Pozo MK1"
 		},
 		"recipe" : [
 			[{"r" : "armature", "cost": 50}]               
@@ -109,6 +116,7 @@
 		"name" : {
 			"fr" : "Astroport MK1",
 			"en" : "spacesport MK1"
+			"es" : "Astropuerto MK1"
 		},
 		"recipe" : [
 			[{"r" : "armature", "cost": 500000}],
