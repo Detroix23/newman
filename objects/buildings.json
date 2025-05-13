@@ -10,7 +10,7 @@
 		],
 		"production" : [
 			[{}, {"raw_iron": 5}],
-			{{}, "raw_copper": 5}
+			[{}, {"raw_copper": 5}]
 		]
 	},
 	"factoryMk1": {
@@ -25,6 +25,8 @@
 		"production" : [
 			[{"raw_iron": 5}, {"iron_ingot": 3}],
 			[{"raw_copper": 5}, {"copper_ingot": 4}]
+			[{"raw_coal":10}, {"coal": 4}]
+			[[{"ingot_iron": 20}, {"coal" : 40 }], {"steel": 4}]
 		]
 	},
 
@@ -57,6 +59,38 @@
 			[{"oil" : 13}, {"plastic" : 7}],
 		]
 	},
+	"ore_refineryMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "raffinerie de minerai MK1",
+			"en" : "ore refinery MK1"
+		},
+		"recipe" : [
+			[{"r" : "iron", "cost": 30}],
+			[{"r" : "armature", "cost": 6}],
+			[{"r" : "plastic", "cost": 5}]
+		]
+		"production" : [
+			[{"raw_gold" : 10}, {"fuel" : 3}],
+			[[{"raw_lithium" : 8}, {"water" : 30000}], {"plastic" : 2}],
+		]
+	},
+	"electronics_factoryMK1": {
+		"id" : 4,
+		"name" : {
+			"fr" : "usine d'éléctronique MK1",
+			"en" : "electronics factory MK1"
+		},
+		"recipe" : [
+			[{"r" : "iron", "cost": 30}],
+			[{"r" : "armature", "cost": 6}],
+			[{"r" : "plastic", "cost": 5}]
+		]
+		"production" : [
+			[{"raw_gold" : 10}, {"fuel" : 3}],
+			[[{"raw_lithium" : 8}, {"water" : 30000}], {"plastic" : 2}],
+		]
+	},
 	"wellMK1": {
 		"id" : 4,
 		"name" : {
@@ -64,23 +98,10 @@
 			"en" : "well MK1"
 		},
 		"recipe" : [
-			[{"r" : "armature", "cost": 2}]               
+			[{"r" : "armature", "cost": 50}]               
 		]
 		"production" : [
 			[{}, {"water": 5}]
-		]
-	},
-
-	"batteryMK1": {
-		"id" : 4,
-		"name" : {
-			"fr" : "batterie MK1",
-			"en" : "battery MK1"
-		},
-		"recipe" : [
-			[{"r" : "lithium", "cost": 2}],
-			[{"r" : "plastic", "cost": 3}],
-			[{"r" : "copper_ingot", "cost": 1}]
 		]
 	},
 	"spacesportMK1": {
@@ -96,6 +117,9 @@
 			[{"r" : "electronic_componentMK1", "cost": 1000}],
 			[{"r" : "concrete", "cost": 1000000}],
 			[{"r" : "steel", "cost": 30000}]
+		]
+		"production" : [
+			[{}, {}]
 		]
 	}
 }
