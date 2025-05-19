@@ -154,7 +154,7 @@
 			"id" : 1,
 			"name": {
 				"fr" : "Armature",
-				"en" : "Frame"
+				"en" : "Frame",
 				"es" : "Marco"
 			},
 			"recipe" : [
@@ -199,7 +199,7 @@
 			"id" : 1,
 			"name": {
 				"fr" : "béton",
-				"en" : "concrete"
+				"en" : "concrete",
 				"es" : "concreto"
 			},
 			"materials" : [
