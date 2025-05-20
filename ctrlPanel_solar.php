@@ -14,6 +14,7 @@
 <body>
 
 	<?php
+		// Calcs
 
 
 
@@ -26,16 +27,6 @@
 		<div id="ctnr-sf" class="ctnr-solar-anims"></div>
 		<div id="ctnr-sos" class="ctnr-solar-anims"></div>
 		<div id="ctnr-ss" class="ctnr-solar-anims"></div>
-	</div>
-	<div class="menu-select">
-		<div class="titr-menu-select">
-			<h3 class="txt-titr-menu-select">Selectianné votre destiniation</h3>
-		</div>
-		<form action="" method="post" class="form-menu-select">
-			<select class="select-menu" id="planetSelect" onchange="this.form.submit()">
-				<option value="Submit">Selection de la destination</option>
-			</select>
-		</form>
 	</div>
 
 	<script src="./js/stars1.js"></script> 

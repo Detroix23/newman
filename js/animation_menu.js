@@ -5,6 +5,7 @@ function randint(min, max) {
 document.addEventListener("DOMContentLoaded", function() {
     const container = document.querySelector("body");
     const fondEtoile = document.querySelector("#ctnr-ss");
+	const planetSelect = document.getElementById("planetSelect");
 
     // Variables pour le zoom et le déplacement
     let scale = 1;
@@ -112,11 +113,36 @@ document.addEventListener("DOMContentLoaded", function() {
             Torbit = Torbit + 10;
             planetContainer.style.borderColor = "white transparent transparent transparent";
             planetContainer.style.zIndex = 1;
+			
+            // Ajouter un identifiant unique à chaque planète
+            const planetId = 'planet-' + i;
+            planet.id = planetId;
+
+            // Stocker la planète dans le tableau
+            planets.push({
+                id: planetId,
+                element: planet,
+                name: "Planète " + (i + 1)
+            });
+
+            // Ajouter une option au select
+            const option = document.createElement('option');
+            option.value = planetId;
+            option.textContent = "Planète " + (i + 1);
+            planetSelect.appendChild(option);
 
             planet.addEventListener('mouseover', function() {
                 if (selectedPlanet !== planet) {
                     if (selectedPlanet) {
                         selectedPlanet.style.boxShadow = "none";
+						if (randomSun === 1) {
+							sun.style.boxShadow = "0 0 3em rgb(255, 128, 0)";
+						} else if (randomSun === 2) {
+		
+							sun.style.boxShadow = "0 0 3em rgb(0, 0, 255)";
+						} else {
+							sun.style.boxShadow = "0 0 3em rgb(255, 0, 0)";
+						}
                     }
                     planet.style.boxShadow = "0 0 1em rgba(0, 255, 255, 1)";
                     selectedPlanet = planet;
