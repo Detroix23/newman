@@ -135,7 +135,7 @@
                         </td> -->
                     </tr>
 
-                    <?php if ($bProds): /// If there is building production defined ?>
+                    <?php /// Production des batiments ?>
                         <tbody id="targetOf-btn-fold-item<?=$iid;?>" class="ctnr-fold-item-details" style="display: none;">
                         <?php foreach ($bProds as $bProdName => $bProdVal): ?>
                         <!-- A great line of sub folder -->
@@ -148,7 +148,6 @@
                         </tr>
                         <?php endforeach; ?>
                         </tbody>
-                    <?php endif;?>
                     
                     <?php endforeach; ?>
                 </table>

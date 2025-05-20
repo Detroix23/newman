@@ -11,6 +11,16 @@
     /// Forms
     $prev = !empty($_POST['fPrevPage']) ? $_POST['fPrevPage'] : './uiTop.php';
     $db_export = empty(FORM->reqc('fDbExport')) ? False : True;
+
+    /// JSON
+    $all = [];
+    /// Loading Buildings
+	$all['b']['str'] = file_get_contents('./objects/buildings.json');
+	$all['b'] = json_decode(
+		$all['b']['str'],
+		associative: true,
+		flags: JSON_THROW_ON_ERROR);
+    
 ?>
 <!DOCTYPE HTML>
 <html class="html-top">
@@ -121,7 +131,14 @@
                     $Gamedata[$element_name]['b'][$building]['unspecified'] = $input_value;
                 }
             }
-
+        
+        /// Croiser avec le JSON, verifier que toutes les production sont initialisées
+        } foreach ($all['b'] as $building => $building_value) {
+            foreach ($building_value['production'] as $production) {
+                if (!array_key_exists($production, $Gamedata[$element_name]['b'][$building])) {
+                    $Gamedata[$element_name]['b'][$building][$production] = 0;
+                }
+            }
         }
     }
 

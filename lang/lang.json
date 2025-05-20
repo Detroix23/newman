@@ -4,19 +4,23 @@
     "top" : {
         "title": {
             "en" : "Newman",
-            "fr" : "Nouvel Homme"
+            "fr" : "Nouvel Homme",
+            "es" : "Nuevo Hombre"
         },
         "quickAccess" : {
             "en" : "Quick access",
-            "fr" : "Accès rapide"
+            "fr" : "Accès rapide",
+            "es" : "Acceso rapido"
         },
         "settingMain" : {
             "en" : "Settings O",
-            "fr" : "Paramètres O"
+            "fr" : "Paramètres O",
+            "es" : "Comfiguration O"
         },
         "turnButton" : {
             "en" : "Turn >",
-            "fr" : "Tour >"
+            "fr" : "Tour >",
+            "es" : "torno"
         }
     }
 

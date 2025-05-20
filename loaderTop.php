@@ -79,7 +79,7 @@
 	//// First check POST, then browser
 	$lang = '';
 	FORM->post('fLang', $lang);
-	$acceptLangs = ['fr' => 'Français', 'en' => 'English'];
+	$acceptLangs = ['fr' => 'Français', 'en' => 'English', 'es' => 'Español'];
 	if ($lang === '') {
 		$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 	}
