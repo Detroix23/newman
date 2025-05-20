@@ -113,7 +113,7 @@ body {
 }
 
 .planet {
-    /* --orbit-distance: calc(10em + (var(--i) * 5em)); /* Exemple de distance d'orbite variable */ */
+    --orbit-distance: calc(10em + (var(--i) * 5em)); /* Exemple de distance d'orbite variable */
 }
 
 @keyframes orbit {

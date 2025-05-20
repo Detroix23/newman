@@ -5,9 +5,22 @@ function randint(min, max) {
 
 document.addEventListener("DOMContentLoaded", function() {
     const container = document.querySelector("body");
-    const fondEtoile = document.querySelector("#ctnr-ss");
+    const fondEtoile = document.querySelector(".fond-etoile");
 
-    
+    function createStars() {
+        for (let i = 0; i < 1000; i++) {
+            const star = document.createElement("div");
+            star.className = "star";
+            star.style.width = ".2px";
+            star.style.height = ".2px";
+            star.style.backgroundColor = "white";
+            star.style.position = "absolute";
+            star.style.top = Math.random() * 100 + "%";
+            star.style.left = Math.random() * 100 + "%";
+            container.appendChild(star);
+        }
+    }
+
     function randomSS() {
         var nbPlanet = randint(3, 9);
         const planets = [
@@ -29,13 +42,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var randomSun = randint(1, 3);
         if (randomSun === 1) {
-            sun.style.background = "url('/img/solarSystem/sun0.png') no-repeat center center";
+            sun.style.background = "url('images/sun0.png') no-repeat center center";
             sun.style.boxShadow = "0 0 3em rgb(255, 128, 0)";
         } else if (randomSun === 2) {
-            sun.style.background = "url('/img/solarSystem/sun1.png') no-repeat center center";
+            sun.style.background = "url('images/sun1.png') no-repeat center center";
             sun.style.boxShadow = "0 0 3em rgb(0, 0, 255)";
         } else {
-            sun.style.background = "url('/img/solarSystem/sun2.png') no-repeat center center";
+            sun.style.background = "url('images/sun2.png') no-repeat center center";
             sun.style.boxShadow = "0 0 3em rgb(255, 0, 0)";
         }
         sun.style.backgroundSize = "cover";
@@ -68,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
             planet.style.borderRadius = '50%';
 
             var aparencePlanet = planets[randint(0, planets.length - 1)];
-            planet.style.background = "url('./img/solarSystem/" + aparencePlanet + "') no-repeat center center";
+            planet.style.background = "url('images/" + aparencePlanet + "') no-repeat center center";
             planet.style.backgroundSize = "cover";
 
             var Vorbit = randint(12, 50);
@@ -109,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    createStars();
     randomSS();
 
 

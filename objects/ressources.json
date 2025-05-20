@@ -4,19 +4,34 @@
 			"id" : 6,
 			"name": {
 				"fr" : "Fer brut",
-				"en" : "Raw iron"
+				"en" : "Raw iron",
+				"es" : "Hierro crudo"
 			},
 			"generation": {
 				"height": 0,
 				"width": 0,
 				"rarity": 0
-			} 
+			}
+		},
+		"water" : {
+			"id" : 6,
+			"name": {
+				"fr" : "Eau",
+				"en" : "Water",
+				"es" : "Agua"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			}
 		},
 		"raw_copper" : {
 			"id" : 5,
 			"name": {
 				"fr" : "Cuivre brut",
-				"en" : "Raw copper"
+				"en" : "Raw copper",
+				"es" : "Cobre crudo"
 			},
 			"generation": {
 				"height": 0,
@@ -25,18 +40,64 @@
 			} 
 			
 		},
+		"raw_coal" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Charbon brut",
+				"en" : "Raw coal",
+				"es" : "Carbón crudo"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			} 
+			
+		},
+		"coal" : {
+			"id" : 1,
+			"name": {
+				"fr" : "charbon",
+				"en" : "Coal",
+				"es" : "Carbón"
+			},
+			"recipe" : [
+				["raw_coal"]
+			]
+			
+		},
+		"oil" : {
+			"id" : 6,
+			"name": {
+				"fr" : "Pétrole",
+				"en" : "Oil",
+				"es" : "Petróleo crudo"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
+			} 
+		},
 		"diamond" : {
 			"id" : 4,
 			"name": {
 				"fr" : "Diamants",
-				"en" : "Diamonds"
+				"en" : "Diamonds",
+				"es" : "Diamante"
+			},
+			"generation": {
+				"height": 0,
+				"width": 0,
+				"rarity": 0
 			}
 		},
 		"iron_ingot" : {
 			"id" : 1,
 			"name": {
 				"fr" : "Fer",
-				"en" : "Iron"
+				"en" : "Iron",
+				"es" : "Hierro"
 			},
 			"recipe" : ["raw_iron"]
 		},
@@ -44,15 +105,17 @@
 			"id" : 2,
 			"name": {
 				"fr" : "Cuivre",
-				"en" : "Copper"
+				"en" : "Copper",
+				"es" : "Cobre"
 			},
 			"recipe" : ["raw_copper"]
 		},
 		"sand" : {
 			"id" : 3,
 			"name": {
-				"fr" : "sable",
-				"en" : "sand"
+				"fr" : "Sable",
+				"en" : "Sand",
+				"es" : "Arena"
 			},
 			"materials" : [
 				["sand"]
@@ -61,8 +124,9 @@
 		"raw_gold" : {
 			"id" : 1,
 			"name": {
-				"fr" : "or brut",
-				"en" : "raw gold"
+				"fr" : "Or brut",
+				"en" : "Raw gold",
+				"es" : "Oro crudo"
 			},
 			"generation": {
 				"height": 0,
@@ -74,8 +138,9 @@
 		"litium" : {
 			"id" : 5,
 			"name": {
-				"fr" : "lithium",
-				"en" : "lithium"
+				"fr" : "Lithium",
+				"en" : "Lithium",
+				"es" : "Litio"
 			},
 			"recipe" : [
 				["raw_lithium"]
@@ -89,7 +154,8 @@
 			"id" : 1,
 			"name": {
 				"fr" : "Armature",
-				"en" : "Armature"
+				"en" : "Frame",
+				"es" : "Marco"
 			},
 			"recipe" : [
 				["iron_ingot"]
@@ -99,18 +165,31 @@
 		"plastic" : {
 			"id" : 1,
 			"name": {
-				"fr" : "plastic",
-				"en" : "plastic"
+				"fr" : "Plastic",
+				"en" : "Plastic",
+				"es" : "Plástico"
 			},
 			"materials" : [
-				["plastic"]
+				["oil"]
+			]
+		},
+		"fuel" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Carburant",
+				"en" : "Fuel",
+				"es" : "Combustible"
+			},
+			"materials" : [
+				["oil"]
 			]
 		},
 		"cement" : {
 			"id" : 1,
 			"name": {
-				"fr" : "ciment",
-				"en" : "cement"
+				"fr" : "Ciment",
+				"en" : "Cement",
+				"es" : "Cemento"
 			},
 			"materials" : [
 				["cement"]
@@ -120,17 +199,31 @@
 			"id" : 1,
 			"name": {
 				"fr" : "béton",
-				"en" : "concrete"
+				"en" : "concrete",
+				"es" : "concreto"
 			},
 			"materials" : [
 				["concrete"]
+			]
+		},
+		"steel" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Acier",
+				"en" : "Steel",
+				"es" : "Acero"
+			},
+			"materials" : [
+				["iron_ingot"],
+				["coal"]
 			]
 		},
 		"glass" : {
 			"id" : 1,
 			"name": {
 				"fr" : "verre",
-				"en" : "glass"
+				"en" : "glass",
+				"es" : "Cristal"
 			},
 			"recipe" : [
 				["sand"]
@@ -138,28 +231,42 @@
 			
 		},
 		"gold_ingot" : {
-		"id" : 1,
-		"name": {
-			"fr" : "lingot d'or",
-			"en" : "gold ingot"
-		},
-		"recipe" : [
-			["raw_gold"]
-		]
+			"id" : 1,
+			"name": {
+				"fr" : "lingot d'or",
+				"en" : "gold ingot",
+				"es" : "lingote de oro"
+			},
+			"recipe" : [
+				["raw_gold"]
+			]
 		
 	},
 		"raw_litium" : {
 			"id" : 5,
 			"name": {
 				"fr" : "lithium brut",
-				"en" : "Raw_lithium"
+				"en" : "Raw_lithium",
+				"es" : "Litio crudo"
 			},
-			"generation": {
-				"height": 0,
-				"width": 0,
-				"rarity": 0
-			}
+			"materials" : [
+				["plastic"],
+				["copper_ingot"]
+			]
+		},
+		"electric_wire" : {
+			"id" : 5,
+			"name": {
+				"fr" : "Fil éléctrique",
+				"en" : "Electric wire",
+				"es" : "Cable electrico"
+			},
+			"materials" : [
+				["plastic"],
+				["copper_ingot"]
+			]
 		} 
+		
 	},
 	
 	"r3" : {
@@ -167,14 +274,54 @@
 			"id" : 1,
 			"name": {
 				"fr" : "Tête de foreuse Mk1",
-				"en" : "Drill head Mk1"
+				"en" : "Drill head Mk1",
+				"es" : "Cabeza de taladro"
 			},
 			"recipe" : [
 				["iron_ingot"]
 			]
+		},
+		"electronic_component_mk1" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Composanst éléctronique MK1",
+				"en" : "Electronic component",
+				"es" : "Componente electronico"
+			},
+			"recipe" : [
+				["gold_ingot"],
+				["plastic"],
+				["copper_ingot"]
+			]
+		},
+		"batteryMK1": {
+			"id" : 4,
+			"name" : {
+				"fr" : "Batterie MK1",
+				"en" : "Battery MK1",
+				"es" : "Batería"
+			},
+			"recipe" : [
+				["lithium"],
+				["plastic"],
+				["copper_ingot"]
+			]
+	},
+		"photovoltaic_panel_mk1" : {
+			"id" : 1,
+			"name": {
+				"fr" : "Paneaux photovoltaïque Mk1",
+				"en" : "Photovoltaic panel Mk1",
+				"es" : "Paneles fotovoltaicos"
+			},
+			"recipe" : [
+				["glass"],
+				["electric_wire"],
+				["plastic"],
+				["armature"]
+			]
 			
 		}
-		
 	}
 }
 
