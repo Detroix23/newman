@@ -390,8 +390,16 @@ button {
 .inp-numb1 {
 	font: 0.9rem "Fredoka";
 	color: var(--c-ctr);
+} .inp-numb2 {
+	font: 0.8rem "Fredoka";
+	color: var(--c-ctr);
 }
 
 .inp-numb1[value="-1"] {
 	color: var(--c-nega1);
+}
+
+.ctnr-fold-item-details {
+	table-layout: fixed;
+	width: 100%;
 }

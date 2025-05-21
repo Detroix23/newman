@@ -15,10 +15,10 @@
 	$SQL_RES = array(); //NU
 	////Connection to DB
 	// $db_credit_elems = ["train2", "root", "1", ];
-	$conn_elems = DB->connect("nm_elems", CONN_CREDITS);
+	$conn_elems = DB->connect("nm_elems", [CONN_CREDITS_HOST, CONN_CREDITS_USER, CONN_CREDITS_PWD]);
 	$_SESSION['conn']['elems'] = $conn_elems;
 	// $db_credit_const = ["train2", "root", "1", "nm_const"];
-	$conn_const = DB->connect("nm_const", CONN_CREDITS);
+	$conn_const = DB->connect("nm_const", [CONN_CREDITS_HOST, CONN_CREDITS_USER, CONN_CREDITS_PWD]);
 	$_SESSION['conn']['const'] = $conn_const;
 	
 	/// Retrive element from form

@@ -10,8 +10,8 @@
 			[{"iron_ingot": 5}]
 		],
 		"production" : [
-			[1, {}, {"raw_iron": 5}],
-			[1, {}, {"raw_copper": 5}]
+			["mine_iron", 1, {}, {"raw_iron": 5}],
+			["mine_coppper", 1, {}, {"raw_copper": 5}]
 		]
 	},
 	"factoryMk1": {
@@ -25,10 +25,10 @@
 			[{"iron_ingot" : 10}]
 		],
 		"production" : [
-			[2, {"raw_iron": 5}, {"iron_ingot": 3}],
-			[2, {"raw_copper": 5}, {"copper_ingot": 4}],
-			[2, {"raw_coal":10}, {"coal": 4}],
-			[3, [{"ingot_iron": 20}, {"coal" : 40 }], {"steel": 4}]
+			["smelt_iron", 2, {"raw_iron": 5}, {"iron_ingot": 3}],
+			["smelt_copoer", 2, {"raw_copper": 5}, {"copper_ingot": 4}],
+			["refine_coal", 2, {"raw_coal":10}, {"coal": 4}],
+			["make_steel", 3, {"ingot_iron": 20, "coal" : 40 }, {"steel": 4}]
 		]
 	},
 
@@ -43,7 +43,7 @@
 			[{"r" : "iron", "cost": 5}]
 		],
 		"production" : [
-			[5, {}, {"oil": 5}]
+			["pump_oil", 5, {}, {"oil": 5}]
 		]
 	},
 	
@@ -59,8 +59,8 @@
 			[{"r" : "armature", "cost": 2}]
 		],
 		"production" : [
-			[10, {"oil" : 10}, {"fuel" : 3}],
-			[10, {"oil" : 13}, {"plastic" : 7}]
+			["make_fuel_from_oil", 10, {"oil" : 10}, {"fuel" : 3}],
+			["make_plastic_from_oil", 10, {"oil" : 13}, {"plastic" : 7}]
 		]
 	},
 	"ore_refineryMK1": {
@@ -76,8 +76,8 @@
 			[{"r" : "plastic", "cost": 5}]
 		],
 		"production" : [
-			[7, {"raw_gold" : 10}, {"gold_ingot" : 3}],
-			[7, [{"raw_lithium" : 8}, {"water" : 30000}], {"plastic" : 2}]
+			["gold_ingot", 7, {"raw_gold" : 10}, {"gold_ingot" : 3}],
+			["lithium", 7, {"raw_lithium" : 8, "water" : 30000}, {"plastic" : 2}]
 		]
 	},
 	"electronics_factoryMK1": {
@@ -93,8 +93,8 @@
 			[{"r" : "plastic", "cost": 500}]
 		],
 		"production" : [
-			[15, [{"plastic" : 20}, {"copper_ingot" : 19}], {"electric_wire" : 3}],
-			[15, [{"gold_ingot" : 8}, {"platic" : 30}, {"copper_ingot": 25}], {"electronic_component_mk1" : 1}]
+			["electric_wire", 15, {"plastic" : 20, "copper_ingot" : 19}, {"electric_wire" : 3}],
+			["electronic_component_mk1", 15, {"gold_ingot" : 8, "platic" : 30, "copper_ingot": 25}, {"electronic_component_mk1" : 1}]
 		]
 	},
 	"wellMK1": {
@@ -108,7 +108,7 @@
 			[{"r" : "armature", "cost": 50}]               
 		],
 		"production" : [
-			[1, {}, {"water": 5}]
+			["pump_water", 1, {}, {"water": 5}]
 		]
 	},
 	"spacesportMK1": {
@@ -127,7 +127,6 @@
 			[{"r" : "steel", "cost": 30000}]
 		],
 		"production" : [
-			[]
 		]
 	}
 }

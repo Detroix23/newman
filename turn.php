@@ -131,14 +131,6 @@
                     $Gamedata[$element_name]['b'][$building]['unspecified'] = $input_value;
                 }
             }
-        
-        /// Croiser avec le JSON, verifier que toutes les production sont initialisées
-        } foreach ($all['b'] as $building => $building_value) {
-            foreach ($building_value['production'] as $production) {
-                if (!array_key_exists($production, $Gamedata[$element_name]['b'][$building])) {
-                    $Gamedata[$element_name]['b'][$building][$production] = 0;
-                }
-            }
         }
     }
 
