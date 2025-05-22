@@ -255,8 +255,8 @@
 		*/
 		const ASSOC_ONE_RECORD = 1<<0;
 		const ASSOC_KEY_1 = 1<<1;
-		
-		function connect(string|array|null $db=NULL, array $db_credit=CONN_CREDITS, string $pre=DB_PREF): mysqli|false {
+
+		function connect(string|array|null $db=NULL, array $db_credit=[CONN_CREDITS_HOST, CONN_CREDITS_USER, CONN_CREDITS_PWD], string $pre=DB_PREF): mysqli|false {
 			/**
 			* Function: Connect to DB using a creditential array. DB non mandatory.
 			* Args:

@@ -49,11 +49,19 @@
                         $_SESSION[name]['r'][$rnk][$rk] = 0;
                     }
                 }
-            ///// Buildings
+            ///// Create all buildings templates (building key => buidling value)
 			} foreach ($all['b'] as $bk => $b) {
-				$_SESSION[name]['b'][$bk] = [];				
+                ////// Init default value
+                $_SESSION[name]['b'][$bk]['undefined'] = 0;
+                /// Croiser avec le JSON, verifier que toutes les production sont initialisées
+                if ($b['production'] !== []) {
+                    foreach ($b['production'] as $production) {
+                        ////// Production output is excpected ressource to be produced.
+                        $production_name = $production[0];
+                        $_SESSION[name]['b'][$bk][$production_name] = 0;
+                    }
+                }		
 			}
-			
 			//// Debug Test Database port
 			
 			//// Debug powers
@@ -105,54 +113,68 @@
             <div class="content">
 				<!-- Window 1 - Builds -->
                 <table id="table-build" class="table-build1">
-                    <tr>   
-                        <th></th>
-                        <th>Name</th>
-                        <!-- <th></th> -->
-                        <th>Surface (units)</th>
-                        <!-- <th></th> -->
-
-                    </tr>
-                    <?php $iid = 0;
-                        foreach ($bs as $bname => $bProds): /// Foreach buildings
-                            $iid++;
-                            $bValSum = 0;
-                            foreach ($bProds as $bProdName => $bProdVal) {
-                                ///// Sum of the buildings of the array [[n1, "Prod1"], [n2, "Prod2"], ...]
-                                $bValSum += $bProdVal;
-                            }
-                    ?>
-                    <tr class="line-item-main">
-                        <td>
-                            <button id="btn-fold-item<?=$iid;?>" class="btn-fold-item">*</button>
-                        </td>
-                        <td class="label-itemKey1"><?= $all['b'][$bname]['name'][$lang];?> : </td>
-                        <!-- <td id="ctnr-btn-plus<?=$iid?>" class="label-itemPlus">
-                            <button id="btn-plus<?=$iid?>" max="5" class="btn-incr btn-plus1">+</button>
-                        </td> -->
-                        <td id="label-itemVal1-<?=$iid?>" class="label-itemValue1">
-                            <input id="inp-building-itemValue1-<?=$bname;?>" class="inp-numb1 itemValue1" building="<?=$bname;?>" type="number" name="fBuild_<?=name?>_<?=$bname?>" value="<?= $bValSum ?>" />
-                        </td>
-                        <!-- <td id="ctnr-btn-minus<?=$iid?>" class="label-itemMinus">
-                            <button id="btn-minus<?=$iid?>" max="2" class="btn-incr btn-minus1">-</button>
-                        </td> -->
-                    </tr>
-
-                    <?php /// Production des batiments ?>
-                        <tbody id="targetOf-btn-fold-item<?=$iid;?>" class="ctnr-fold-item-details" style="display: none;">
-                        <?php foreach ($bProds as $bProdName => $bProdVal): ?>
-                        <!-- A great line of sub folder -->
-                        <tr id="targetOf-btn-fold-item<?=$bname."-".$bProdName?>" class="line-fold-building-production">
-                            <td></td>
-                            <td><?= $bProdName ?></td>
+                    <thead>
+                        <tr> 
+                            <th></th>
+                            <th>Name</th>
+                            <th>Surface (units)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $iid = 0;
+                            foreach ($bs as $bname => $bProds): /// Foreach buildings
+                                $iid++;
+                                $bValSum = 0;
+                                foreach ($bProds as $bProdName => $bProdVal) {
+                                    ///// Sum of the buildings of the array [[n1, "Prod1"], [n2, "Prod2"], ...]
+                                    $bValSum += $bProdVal;
+                                }
+                        ?>
+                        <tr class="line-item-main">
                             <td>
-                                <input id="inp-building-production-<?=$bname."-".$bProdName;?>" class="inp-numb2 itemValue1" building="<?=$bname;?>" prodution="<?= $bProdName;?>" type="number" name="fBuild_<?=name;?>_<?=$bname;?>_<?=$bProdName;?>" value="<?= $bProdVal;?>" />
+                                <button id="btn-fold-item<?=$iid;?>" class="btn-fold-item">*</button>
+                            </td>
+                            <td class="label-itemKey1"><?= $all['b'][$bname]['name'][$lang];?> : </td>
+                            <td id="label-itemVal1-<?=$iid?>" class="label-itemValue1">
+                                <input id="inp-building-itemValue1-<?=$bname;?>" class="inp-numb1 itemValue1" building="<?=$bname;?>" type="number" name="fBuild_<?=name?>_<?=$bname?>" value="<?= $bValSum ?>" />
+                            </td>
+                        </tr>
+                        <!-- Production des batiments -->
+                        <tr id="targetOf-btn-fold-item<?=$iid;?>" class="ctnr-fold-item-details" style="display: none;">
+                            <td colspan="3">
+                                <table id="table-building-prods" class="table-build1">
+                                <?php foreach ($all['b'][$bname]['production'] as $production): ?>
+                                    <tr id="targetOf-btn-fold-item<?=$bname."-".$bProdName?>" class="line-fold-building-production">
+                                    <!-- Specialized production -->
+                                        <td><?= $production[0] ?></td>
+                                        <td><?= $production[1] ?> turns</td>
+                                        <td><?php
+                                            $production_cost = "";
+                                            foreach ($production[2] as $production_cost_item => $production_cost_count) {
+                                                $production_cost .= $production_cost_count." ".$production_cost_item." ";
+                                            } 
+                                            echo $production_cost;
+                                        ?></td>
+                                        <td><?php
+                                            $production_output = "";
+                                            foreach ($production[3] as $production_output_item => $production_output_count) {
+                                                $production_output .= $production_output_count. " ".$production_output_item." ";
+                                            }
+                                            echo $production_output;
+                                        ?></td>
+                                        
+                                        
+                                        <!-- BUilding field -->
+                                        <td>
+                                            <input id="inp-building-production-<?=$bname."-".$bProdName;?>" class="inp-numb2 itemValue1" building="<?=$bname;?>" prodution="<?= $bProdName;?>" type="number" name="fBuild_<?=name;?>_<?=$bname;?>_<?=$bProdName;?>" value="<?= $bProdVal;?>" />
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </table>
                             </td>
                         </tr>
                         <?php endforeach; ?>
-                        </tbody>
-                    
-                    <?php endforeach; ?>
+                    </tbody>
                 </table>
             </div>
 
