@@ -18,11 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
     let panOffsetX = 0, panOffsetY = 0;
 
     function randomSS() {
-        var nbPlanet = randint(3, 9);
+        const nbPlanet = window.nbPlanet || 3;
         const planets = [
-            "planet0.png", "planet1.png", "planet2.png", "planet3.png",
-            "planet4.png", "planet5.png", "planet6.png", "planet7.png",
-            "planet8.png", "planet9.png", "planet10.png", "planet11.png",
+            "planet0.png", "planet1.png", "planet2.png", "planet4.png",
+			"planet5.png", "planet6.png", "planet7.png", "planet8.png", 
+			"planet9.png", "planet10.png", "planet11.png", "planet12.png", 
+			"planet13.png", "planet14.png",
         ];
 
         // Créer et styliser le soleil
@@ -125,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 name: "Planète " + (i + 1)
             });
 
-            // Ajouter une option au select
+            // Ajouter une option select
             const option = document.createElement('option');
             option.value = planetId;
             option.textContent = "Planète " + (i + 1);
@@ -155,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             document.addEventListener('keydown', function(event) {
                 if (event.key === 'Enter' && selectedPlanet) {
-                    window.location.href = "planet" + randint(1,10000000); // Remplace par le lien réel de la planète
+                    window.location.href = "planet-" + i; // Remplace par le lien réel de la planète
                 }
             })
 

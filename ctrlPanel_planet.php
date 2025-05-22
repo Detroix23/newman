@@ -16,6 +16,7 @@
 	*/
 	
 	// Load planet
+    $nbPlanet = rand(3, 9); // defini le nb de planetes
 	if (empty($_SESSION[name])) {
 		$page_title .= " - New";
 		/* Here, Id must be linked to the correct Name
@@ -74,7 +75,9 @@
 	$bs = $_SESSION[name]['b']; 	# Buildings
 	
 ?>
-
+<script>
+    window.nbPlanet = <?php echo $nbPlanet; ?>;    // rend accesible le nb de planetes au fichier js
+</script>
 <div class="ctnr-planet" id="ctnr-ui-game">
 
     <!-- DATA - Intel on the planet -->
