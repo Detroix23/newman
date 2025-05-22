@@ -14,19 +14,26 @@
 <body>
 
 	<?php
-		// Calcs
-
-
-
-
 	?>
 	
-	<script src="./js/common.js">// A enlever</script>
+	<script src="./js/common.js">
+	</script>
 
 	<div class="ctnr-main">
 		<div id="ctnr-sf" class="ctnr-solar-anims"></div>
 		<div id="ctnr-sos" class="ctnr-solar-anims"></div>
 		<div id="ctnr-ss" class="ctnr-solar-anims"></div>
+	</div>
+	<div class="menu-select">
+		<div class="titr-menu-select">
+			<h3 class="txt-titr-menu-select">Selectianné votre destiniation</h3>
+		</div>
+		<form action="uiTop.php" method="post" class="form-menu-select">
+			<select class="select-menu" id="planetSelect" onchange="this.form.submit()">
+				<option value="Submit">Selection de la destination</option>
+				<!--<option value="Submit">Sun</option>-->
+			</select>
+		</form>
 	</div>
 
 	<script src="./js/stars1.js"></script> 
