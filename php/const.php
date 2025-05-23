@@ -19,8 +19,8 @@
 		$e;
 	}
 	const CONN_CREDITS_HOST = 'newman';
-	const CONN_CREDITS_USER = 'root';
-	const CONN_CREDITS_PWD = '1';
+	const CONN_CREDITS_USER = 'studio';
+	const CONN_CREDITS_PWD = '85125141.23';
 	const DB_PREF = "";
 
 
