@@ -13,6 +13,7 @@
 	$name = "";
 	$SQL = array();
 	$SQL_RES = array(); //NU
+	if (!isset($_SESSION['turn']['count'])) $_SESSION['turn']['count'] = 0;
 	////Connection to DB
 	// $db_credit_elems = ["train2", "root", "1", ];
 	$conn_elems = DB->connect("nm_elems", [CONN_CREDITS_HOST, CONN_CREDITS_USER, CONN_CREDITS_PWD]);

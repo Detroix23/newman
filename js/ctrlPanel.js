@@ -11,7 +11,7 @@ let foldH = fold_max_height;
 /// Build control
 const buildButtons = [];
 /// Input lists
-const inp_class_whitelist = ['inp-numb1', 'inp-numbSub1'];
+const inp_class_whitelist = ['inp-numb2'];
 const inp_lsKey_black = ['_'];
 
 class buttonBuild {

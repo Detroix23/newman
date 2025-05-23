@@ -113,6 +113,7 @@
 
 		<?php if ($valid['elem'] AND $valid['sel']): ?>
         <div id="ctnr-turn" class="ctnr-btn-turn">
+            
             <!-- Form to pass a turn, sending this page to the 'turn.php' -->
             <form id="form-game" method="POST" action="./turn.php">
 				<?php
@@ -128,6 +129,9 @@
                     <?= $all['txt']['top']['turnButton'][$lang] ?>
                 </button>
             </form>
+            <br>
+            <span id="txt-turn-counter" class="txt-turn-counter"><?= $_SESSION['turn']['count'] ?></span>
+
         </div>
 		<?php endif; ?>
 	
