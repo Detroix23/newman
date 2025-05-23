@@ -65,6 +65,7 @@
     
     /// User inputs
     $User_save_on = $_POST['fSave'] ?? "";
+    $User_debug = $_SESSION['settings']['debug'] ?? "";
     $USER_INPUTS_STRING = $_POST['fUserInputs'] ?? "";
     $USER_INPUTS = [];
     /// Must double encode
@@ -157,6 +158,15 @@
                             }
                             ////// Add ressources if costs are fullfilled
                             if ($costs_fullfilled) {
+                                ///// Remove the ressources costs
+                                foreach ($costs as $cost_ressource => $cost_value) {
+                                    //// Find correct r class
+                                    foreach ($all['r'] as $ressources_class => $ressources) {
+                                        if (array_key_exists($cost_ressource, $ressources)) $ressource_class_found = $ressources_class;
+                                    }
+                                    //// Substract time the number of building doing it
+                                    $Gamedata[$elem]['r'][$ressource_class_found][$cost_ressource] -= $cost_value * $production_jobs; 
+                                }
                                 foreach ($outputs as $out_ressource => $out_value) {
                                     //// Find correct r class
                                     foreach ($all['r'] as $ressources_class => $ressources) {
@@ -220,6 +230,12 @@
         }
     }
 
+    // Go back to game if no debug
+    if ($User_debug !== 'on') {
+        header('Location: '.$prev);
+        exit();
+    }
+    
 ?>
     <script>
         localStorage.clear();

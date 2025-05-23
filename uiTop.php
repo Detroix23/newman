@@ -31,7 +31,7 @@
 
 </head>
 
-<body class="ctnr-body">
+<body class="ctnr-body" style="">
 
     <!-- Approved grid based layout -->
 
@@ -87,7 +87,9 @@
                         <?php endforeach; ?>
                     </select>
                     <!-- Setting -->
-                    <button type="button"><?= $all['txt']['top']['settingMain'][$lang] ?></button>
+                </form>
+                <form method="post" action="./uiTop?fId=settings">
+                    <input type="submit" id="btn-open-settings" class="btn-open-settings" value="Settings O">
                 </form>
             </div>
         </div>
@@ -96,16 +98,21 @@
 
 
 		<!-- Main area of the game to play it, panels of constructions, stats, overviews -->
-		<div class="mainBody">
+		<div class="mainBody" style="">
 			<?php
 				// INCLUDE AREA.
 
 				if (type == "planet") {
 					/// Planet view selected
 					require "ctrlPanel_planet.php";
-				} else {
+                } else if (type == "system") {
+                    require "ctrlPanel_solar.php";
+                } else if (type == "settings") {
+                    /// Settings view selected
+                    require "./php/settings.php";
+                } else {
 					/// If lost in the universe
-					require "localizer.php";	
+					require "localizer.php";
 				}
 
 			?>

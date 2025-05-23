@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var Iorbit = 30;
         var Torbit = randint(15, 20);
 
-        for (let i = 0; i < nbPlanet; i++) {
+        for (let i = 1; i <= nbPlanet; i++) {
             const planetContainer = document.createElement('div');
             planetContainer.className = 'planet-container';
             planetContainer.style.position = 'absolute';
@@ -116,20 +116,20 @@ document.addEventListener("DOMContentLoaded", function() {
             planetContainer.style.zIndex = 1;
 			
             // Ajouter un identifiant unique à chaque planète
-            const planetId = 'planet-' + i;
+            const planetId = 'P0000' + i;
             planet.id = planetId;
 
             // Stocker la planète dans le tableau
             planets.push({
                 id: planetId,
                 element: planet,
-                name: "Planète " + (i + 1)
+                name: "Planète " + i
             });
 
             // Ajouter une option select
             const option = document.createElement('option');
             option.value = planetId;
-            option.textContent = "Planète " + (i + 1);
+            option.textContent = "Planète " + i;
             planetSelect.appendChild(option);
 
             planet.addEventListener('mouseover', function() {
@@ -156,7 +156,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             document.addEventListener('keydown', function(event) {
                 if (event.key === 'Enter' && selectedPlanet) {
-                    window.location.href = "planet-" + i; // Remplace par le lien réel de la planète
+                     //window.location.href = "P0000" + i; Remplace par le lien réel de la planète
+                     
                 }
             })
 

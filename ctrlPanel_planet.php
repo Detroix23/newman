@@ -16,7 +16,7 @@
 	*/
 	
 	// Load planet
-    $nbPlanet = rand(3, 9); // defini le nb de planetes
+    $nbPlanet = 3; // defini le nb de planetes
 	if (empty($_SESSION[name])) {
 		$page_title .= " - New";
 		/* Here, Id must be linked to the correct Name

@@ -265,7 +265,12 @@ button {
 
 
 /*** Game */
-
+.ctnr-main {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
 .ctnr-planet {
 	/*
 	display: inline-grid;
@@ -402,4 +407,15 @@ button {
 .ctnr-fold-item-details {
 	table-layout: fixed;
 	width: 100%;
+}
+
+.btn-ctr {
+	font: 0.9rem "Fredoka";
+	background-color: var(--c-main);
+	color: var(--c-ctr);
+}
+
+.btn-white {
+	font: 0.9rem "Fredoka";
+	color: var(--c-ctr);
 }

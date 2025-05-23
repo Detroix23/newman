@@ -43,7 +43,7 @@ body {
 }
 
 .planet {
-    /* --orbit-distance: calc(10em + (var(--i) * 5em)); /* Exemple de distance d'orbite variable */ */
+    /* --orbit-distance: calc(10em + (var(--i) * 5em)); /* Exemple de distance d'orbite variable */
 }
 
 @keyframes orbit {
@@ -107,7 +107,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	top: 0px;
+	top: 50px;
 	right: 0px;
 	height: 250px;
 	width: 20%;

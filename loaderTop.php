@@ -13,6 +13,7 @@
 	$name = "";
 	$SQL = array();
 	$SQL_RES = array(); //NU
+	if (!isset($_SESSION['settings']['debug'])) $_SESSION['settings']['debug'] = 0;
 	if (!isset($_SESSION['turn']['count'])) $_SESSION['turn']['count'] = 0;
 	////Connection to DB
 	// $db_credit_elems = ["train2", "root", "1", ];
@@ -34,7 +35,21 @@
 	$elem_info["id"] = $elem_info["default_name"] = $elem_info["type"] = $elem_info["local_name"] = $elem_info["global_name"] = "";
 	$elem_info_list = ['id', 'default_name', 'type', 'local_name', 'global_name'];
 	
-	if ($id) {
+	if ($id === "settings") {
+		$elem_info = [];
+		$elem_info["id"] = "settings";
+		$elem_info["default_name"] = "Settings";
+		$elem_info["type"] = "settings";
+		$elem_info["local_name"] = "";
+		$elem_info["global_name"] = "";
+	} else if ($name === "S00001") {
+		$elem_info = [];
+		$elem_info["id"] = "S00001";
+		$elem_info["default_name"] = "S00001";
+		$elem_info["type"] = "system";
+		$elem_info["local_name"] = "";
+		$elem_info["global_name"] = "Système solaire 1";
+	} else if ($id) {
 		$SQL["sel_elem_info_id"] = "SELECT * FROM all_index WHERE id = $id";
 		$elem_info = DB->fetch($conn_elems, $SQL["sel_elem_info_id"], DB::ASSOC_ONE_RECORD);
 	} else if ($name) {
