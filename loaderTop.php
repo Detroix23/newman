@@ -9,6 +9,7 @@
 	// Getting info 
 	///Vars
 	$H = array(); ////HTML to print
+  $valid = array();
 	$id = "";
 	$name = "";
 	$SQL = array();
@@ -48,13 +49,21 @@
 		$elem_info["default_name"] = "S00001";
 		$elem_info["type"] = "system";
 		$elem_info["local_name"] = "";
-		$elem_info["global_name"] = "Système solaire 1";
+		$elem_info["global_name"] = "TEST - Système solaire 1";
 	} else if ($id) {
 		$SQL["sel_elem_info_id"] = "SELECT * FROM all_index WHERE id = $id";
-		$elem_info = DB->fetch($conn_elems, $SQL["sel_elem_info_id"], DB::ASSOC_ONE_RECORD);
+		$elem_info = DB->fetch(
+      $conn_elems, 
+      $SQL["sel_elem_info_id"],
+      DB::ASSOC_ONE_RECORD
+    );
 	} else if ($name) {
 		$SQL["sel_elem_info_name"] = "SELECT * FROM all_index WHERE default_name = '$name'";
-		$elem_info = DB->fetch($conn_elems, $SQL["sel_elem_info_name"], DB::ASSOC_ONE_RECORD);
+		$elem_info = DB->fetch(
+      $conn_elems, 
+      $SQL["sel_elem_info_name"], 
+      DB::ASSOC_ONE_RECORD
+    );
 	} else {
 		$valid['sel'] = False;
 	}

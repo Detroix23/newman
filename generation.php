@@ -8,8 +8,8 @@
 	//// cf. Loader top
 	$AVAILABLE = $all['r']['r2'];
 	/// DB Connect
-	$ELEMS = DB->fetch($conn_elems, "SELECT id, default_name FROM all_index WHERE type='planet'");
-	print_r($ELEMS);
+	$elems = DB->fetch($conn_elems, "SELECT id, default_name FROM all_index WHERE type='planet'");
+	print_r($elems);
 	// Code de generation des elements
 	
 
