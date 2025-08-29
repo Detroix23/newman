@@ -19,9 +19,7 @@
 <?php
     /// Receive debug form
     if (isset($_POST['fDebug'])) {
-        $_SESSION['settings']['debug'] = $_POST['fDebug'] === "on" ? True : False;
+        $_SESSION['settings']['debug'] = $_POST['fDebug'];
         $_POST['fDebug'] = "";
     }
-
-
 ?>

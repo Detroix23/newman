@@ -1,3 +1,5 @@
 {
-    "AllAutocomplete.showCurrentDocument": true
+    "AllAutocomplete.showCurrentDocument": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
 }
