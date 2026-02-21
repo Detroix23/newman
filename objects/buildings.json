@@ -11,7 +11,8 @@
 		],
 		"production" : {
 			"mine_iron" : [1, {}, {"raw_iron": 5}],
-			"mine_coppper" : [1, {}, {"raw_copper": 5}]
+			"mine_coppper" : [1, {}, {"raw_copper": 5}],
+			"mine_coal" : [1, {}, {"raw_coal": 5}]
 		}
 	},
 	"factoryMk1": {

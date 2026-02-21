@@ -1,0 +1,17 @@
+{
+    "name": "detroix23/newman",
+    "description": "Newman game developped by Lycaon & Detroix23.",
+    "type": "project",
+    "license": "CC-BY-1.0",
+    "authors": [
+        {
+            "name": "Detroix23"
+        },
+        {
+            "name": "LycaonXII"
+        }
+    ],
+    "require-dev": {
+        "vimeo/psalm": "^6.5"
+    }
+}
